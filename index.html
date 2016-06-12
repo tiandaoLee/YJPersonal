@@ -1029,11 +1029,12 @@
                         hasGuanzhu = data.playInfo.guanzhuPlay;
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
-                        changePage("YJ_activeContent");
+
                         var height = document.body.clientHeight;
                         var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                         $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                                .html('<iframe id="testIframe" src="http://10.0.0.120/img/haibao/jsEditor/poster/diy/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                                .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                        changePage("YJ_activeContent");
                     }
                 });
             }
@@ -1065,7 +1066,7 @@
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                 $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                        .html('<iframe id="testIframe" src="http://10.0.0.120/img/haibao/jsEditor/poster/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                        .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
             }
         });
     }).on("click",".round-button2", function (e) {
@@ -1100,11 +1101,12 @@
                         hasGuanzhu = data.playInfo.guanzhuPlay;
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
-                        changePage("YJ_activeContent");
+
                         var height = document.body.clientHeight;
                         var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                         $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
                                 .html('<iframe id="testIframe" src='+path+' frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                        changePage("YJ_activeContent");
                     }
                 });
 
@@ -1331,7 +1333,7 @@
                         var height = document.body.clientHeight;
                         var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                         $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                                .html('<iframe id="testIframe" src="http://10.0.0.120/img/haibao/jsEditor/poster/diy/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                                .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                     }
                 });
             }
@@ -1362,7 +1364,7 @@
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                 $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                        .html('<iframe id="testIframe" src="http://10.0.0.120/img/haibao/jsEditor/poster/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                        .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
             }
         });
     }).on("click",".round-button2", function () {
@@ -1441,7 +1443,7 @@
                             var height = document.body.clientHeight;
                             var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                             $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                                    .html('<iframe id="testIframe" src="http://10.0.0.120/img/haibao/jsEditor/poster/diy/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                                    .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                         }
                     });
                 }
@@ -1458,7 +1460,7 @@
                     var height = document.body.clientHeight;
                     var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                     $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                            .html('<iframe id="testIframe" src="http://10.0.0.120/img/haibao/jsEditor/poster/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                            .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                 }
             });
         }else if(type=="loushu"){

@@ -97,15 +97,6 @@ function loadData(id){
             YJSay.setTitle("楼盘详情");
         }
         YJSay.getData({
-            url:"/yjsWebService/config/getBuildLocation",
-            data:{buildId:getBuildId()},
-            success: function (data) {
-                YJSay.useNativeFunction("setLocation",data.lat,data.lng);
-            },error: function () {
-                alert("获取数据失败");
-            }
-        });
-        YJSay.getData({
             url:"/yjsWebService/build/getBuildInfoDetail",
             data:{token:YJSay.getToken(),buildId:getBuildId()},
             success: function (data) {
@@ -118,6 +109,8 @@ function loadData(id){
                 console.log(data);
                 var _loupan = data.buildInfo;
                 if(_loupan&&!YJSay.isEmptyObject(_loupan)){
+                    var buildName = _loupan.buildName;
+                    var buildAddress = _loupan.addressDisplay;
                     $("#cover").attr("src",_loupan.buildImage);
                     $("#salePrice").text(_loupan.salePrice);
                     $("#openTime").text(_loupan.openTtime);
@@ -145,6 +138,15 @@ function loadData(id){
                         centeredSlides: false,
                         spaceBetween: 20,
                         grabCursor: true
+                    });
+                    YJSay.getData({
+                        url:"/yjsWebService/config/getBuildLocation",
+                        data:{buildId:getBuildId()},
+                        success: function (data) {
+                            YJSay.useNativeFunction("setLocation",data.lat+"&"+data.lng,buildName,buildAddress);
+                        },error: function () {
+                            alert("获取数据失败");
+                        }
                     });
                 }
             }
@@ -394,7 +396,8 @@ function loadData(id){
         $('#testIframe').on('load', function(){
             console.log("加载了");
             var phoneScale = 1;
-            phoneWidth = parseInt(window.screen.width);
+            //phoneWidth = parseInt(window.screen.width);
+            phoneWidth = $(window).width();
             phoneScale = phoneWidth/640;
 
             var dom=$('body',parent.document).find('#testIframe').contents().find('#coolapp').find('.wrap');
@@ -625,9 +628,10 @@ function loadData(id){
         console.log($("#YJ_activeContent").attr("data-type"));
         YJSay.getData({
             url:"/yjsWebService/web/loushu/getMyPartIn",
-            data:{token:YJSay.getToken(),activeId:$("#YJ_baseInfo").attr("data-activeId")},
+            data:{token:YJSay.getToken(),loushuId:$("#YJ_activeContent").attr("data-activeId")},
             success: function (data) {
                 console.log(data);
+                alert(JSON.stringify(data));
                 var _point = data.pointInfo;
                 $("#YJ_myParticipation").find(".listItem").show();
                 $("#myShare").hide();
@@ -713,7 +717,7 @@ function loadData(id){
         console.log($("#YJ_activeContent").attr("data-type"));
         YJSay.getData({
             url:"/yjsWebService/web/haibao/getMyPartIn",
-            data:{token:YJSay.getToken(),activeId:$("#YJ_baseInfo").attr("data-activeId")},
+            data:{token:YJSay.getToken(),haibaoId:$("#YJ_baseInfo").attr("data-activeId")},
             success: function (data) {
                 console.log(data);
                 var _point = data.pointInfo;

@@ -15,9 +15,8 @@
 
     <script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
     <script type="text/javascript">
-        alert(document.referrer);
         var baseUrl = 'http://src.yjsvip.com/',  //接口地址
-            orgUrl = 'http://10.0.0.120/web/YJPersonal/index.html#YJ_louPanDetail?buildId=68',  //登录成功跳转相应业务逻辑地址
+            orgUrl = baseUrl+'/img/YJPersonal/index.html#YJ_louPanDetail?buildId=68',  //登录成功跳转相应业务逻辑地址
             weChartToken = localStorage.getItem('weChartToken');
         if(weChartToken){
             console.log('login success');
@@ -27,8 +26,6 @@
                 url: baseUrl+'yjsWebService/weixin/user/getToken?callback=?', 
                 dataType: 'jsonp',
                 success: function(data){
-				
-                    alert(JSON.stringify(data));
                     var _weChartToken = data.token;
                     if(_weChartToken){
                         localStorage.setItem('weChartToken',_weChartToken);

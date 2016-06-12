@@ -3,12 +3,12 @@
  */
 
 var YJSay = (function ($) {
-    var token = "CA4F6D903A72454CA74787EEAEA2D227";
+    var token = "";
     var securityKey="";
     var alarmList;
     var addSaleStatus;
     return {
-        baseUrl:"http://10.0.0.120",
+        baseUrl:"http://src.yjsvip.com",
         getData: function (option) {
             var async = option.async;
             $.ajax({
