@@ -1065,9 +1065,9 @@
                 changePage("YJ_activeContent");
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
-				alert('http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html');
+				alert('http://src.yjsvip.com/img/haibao/jsEditor/poster/'+getBuildId()+'/'+id+'/1.html');
                 $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                        .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                        .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+getBuildId()+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
             }
         });
     }).on("click",".round-button2", function (e) {
