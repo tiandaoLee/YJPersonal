@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/style.css" />
+    <link rel="stylesheet" href="../dist/css/liy.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="box-big">
+        <ul class="listWrap">
+            <li class="listItem"><div class="bottomLine">阅读获得：<span class="right">2000000分(200元1家币)</span></div></li>
+            <li class="listItem"><div class="bottomLine">点赞获得：<span class="right">2000000分(200元1家币)</span></div></li>
+            <li class="listItem"><div class="bottomLine">转发获得：<span class="right">2000000分(200元1家币)</span></div></li>
+            <li class="listItem"><div class="bottomLine no-border">关注楼盘获得：<span class="right">2000000分(200元1家币)</span></div></li>
+        </ul>
+    </div>
+    <!--<div class="box-big top10">
+        <ul class="listWrap">
+           <li class="listItem paddingBottom10">我的三级传播链 <span class="right"><i class="fa fa-chevron-right"></i></span></li>
+        </ul>
+    </div>-->
+    <div class="box-big top10" id="myShare">
+        <ul class="listWrap">
+            <li class="listItem paddingBottom10">我的分享(<span class="colore61f">5人</span>) <span class="right"><i class="fa fa-chevron-right"></i></span></li>
+        </ul>
+    </div>
+</body>
+<script src="../dist/js/jquery-1.10.2.min.js"></script>
+<script>
+    $("#myShare").on("click", function () {
+        window.location.href="myShare.html";
+    });
+</script>
+</html>

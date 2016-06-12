@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/style.css" />
+    <link rel="stylesheet" href="../dist/css/liy.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.min.css">
+
+</head>
+<body>
+<div style="-webkit-overflow-scrolling: touch;width: 100%;">
+    <!--<iframe frameborder="0" style="width: 100%;height:100%"></iframe>-->
+    <div style="width: 100%;height: 300px;"></div>
+</div>
+
+<!--<iframe ng-src="http://10.0.0.120/img/haibao/jsEditor/poster/68/1/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>-->
+<div class="YJnavbar navbar-absolute-bottom">
+    <a class="btn-navbar" data-src="baseInfo"><i class="fa fa-info fa-navbar"></i> 基本信息</a>
+    <a class="btn-navbar" data-src="myParticipation"><i class="fa fa-share-square-o fa-navbar"></i> 我的参与</a>
+    <a class="btn-navbar"><i class="fa fa-share fa-navbar"></i> 转发</a>
+    <a class="btn-navbar gz"><i class="fa fa-info fa-navbar"></i> 关注楼盘</a>
+    <a class="btn-navbar dz"><i class="fa fa-thumbs-o-up fa-navbar"></i> 点赞</a>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade dzBox" id="dzModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <p class="bt1 colore61f bt1height">点赞成功！</p>
+            </div>
+            <div class="modal-body">
+                <p class="bt1 color000 bt1height">您获得以下1家币</p>
+                <div class="bottom20"></div>
+                <img src="../dist/img/dzsuccess_03.png">
+                <div class="bottom20"></div>
+                <p class="formal-font color3232 formal-height">1家币数量<span class="formal-font colore61f formal-height">100个</span></p>
+                <p class="formal-font color000 bt1height">(10元)</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<!-- 模态框（Modal） -->
+<div class="modal fade dzBox" id="gzModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <p class="bt1 colore61f bt1height">恭喜您！</p>
+            </div>
+            <div class="modal-body">
+                <p class="bt1 color000 bt1height">关注楼盘成功</p>
+                <div class="bottom20"></div>
+                <img src="../dist/img/gzSucess_03.png">
+                <div class="bottom10"></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /modal-dialog -->
+</div><!-- /modal -->
+<script src="../dist/js/jquery-1.12.3.min.js"></script>
+<script src="../dist/js/bootstrap.min.js"></script>
+<script>
+    $(".btn-navbar").on("click", function () {
+        if ($(this).attr("data-src")=="baseInfo"){
+            window.location.href="baseInfo.html";
+        }else if($(this).attr("data-src")=="myParticipation"){
+            window.location.href = "myParticipation.html";
+        }
+    });
+    $(".dz").on("click", function () {
+        $("#dzModal").modal("show");
+    });
+    $(".gz").on("click", function () {
+        $("#gzModal").modal("show");
+    });
+</script>
+</body>
+</html>

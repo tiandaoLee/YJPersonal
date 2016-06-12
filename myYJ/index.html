@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/liy.css">
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <style>
+        ul{
+            padding: 16px 0;
+            margin: 0;
+        }
+        header ul{
+            width:100%;
+            background: #fff;
+            display: table;
+            word-spacing: -1em;
+        }
+        header ul li{
+            width: 25%;
+            display: inline-block;
+            word-spacing: 0;
+            text-align: center;
+        }
+        header ul li p{
+            margin: 10px 0;
+        }
+        .latestTuiGuang p{
+            margin: 0;
+            padding: 10px 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li data-src="myWollet">
+                <img src="../dist/img/Wallet@2x.png" alt="">
+                <p>我的钱包</p>
+            </li>
+            <li data-src="zhuanQianBang">
+                <img src="../dist/img/Shape-264@2x.png" alt="">
+                <p>赚钱榜</p>
+            </li>
+            <li data-src="fenXiaoLian">
+                <img src="../dist/img/fenxiaolian@2x.png" alt="">
+                <p>分销链</p>
+            </li>
+            <li data-src="myTuiGuang">
+                <img src="../dist/img/tuiguang@2x.png" alt="">
+                <p>我的推广</p>
+            </li>
+        </ul>
+    </header>
+    <div class="latestTuiGuang">
+        <p>最新推广</p>
+        <ul>
+            <li>
+                <div class="imgBox">
+                    <img class="listImg" src="../dist/img/img_02.png" >
+                    <div class="round-button round-button1"><img src="../dist/img/ewm_03.png"></div>
+                    <div class="round-button round-button2"><img src="../dist/img/1jiabi_03.png"></div>
+                    <div class="box" style="display: table;word-spacing: -1em;margin-top: -3px;">
+                        <div class="box7" style="vertical-align: middle;">
+                            <div class="boxPadding">
+                                <div class="box bt1height xiangdui">
+                                    <span class="bt1 color3232">关注楼盘分值</span>
+                                    <span class="small-font colore61f left10">未发布</span>
+                                    <span class="small-font color3232 juedui">已点赞</span>
+                                </div>
+                                <div class="box bt1height xiangdui">
+                                    <span class="small-font color3232">2015.02.15</span>
+                                    <span class="small-font color3232">8：15：00开抢红包</span>
+                                    <span class="small-font color3232 juedui">共10000元</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box3 xiangdui" style="vertical-align: middle;height: 100%">
+                            <div class="boxPadding juedui" style="width: 7rem;background: #e61f42;text-align: center;">
+                                <div class="box bt1height ">
+                                    <span class="small-font colorfff">剩余：24:02:55</span>
+                                </div>
+                                <div class="box bt1height ">
+                                    <span class="formal-font colorfff">提醒我</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="top10">
+                <div class="imgBox">
+                    <img class="listImg" src="../dist/img/img_02.png" >
+                    <div class="round-button round-button1"><img src="../dist/img/ewm_03.png"></div>
+                    <div class="round-button round-button2"><img src="../dist/img/1jiabi_03.png"></div>
+                    <div class="box-big boxPadding">
+                        <div class="box bt1height xiangdui">
+                            <span class="bt1 color3232">关注楼盘分值</span>
+                            <span class="small-font colore61f left10">未发布</span>
+                            <span class="formal-font color3232 juedui">已参与</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script src="../dist/js/jquery-1.12.3.min.js"></script>
+<script>
+    $("header").find("li").on("click", function () {
+        window.location.href=$(this).attr("data-src")+".html";
+    });
+</script>
+</html>

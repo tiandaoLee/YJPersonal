@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/liy.css">
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.min.css">
+</head>
+<body>
+<div class="user-center">
+    <div class="user-info">
+        <img src="../dist/img/touxiang.png" alt="">
+        <h3>用户名
+            <span class="xunZhangWrap">
+                <i class="xunZhang"></i>
+                <em class="paiMing">15</em>
+                <i class="zhuanRu"></i>
+            </span>
+        </h3>
+        <p>用户等级 <em class="level">V<sub>1</sub></em></p>
+
+        <div class="my-package"><span style="text-align: center">$</span> 钱包说明 ></div>
+    </div>
+
+    <ul class="nav text-center">
+        <li>总积分 <p>1000</p></li>
+        <li>余额 <p>100</p></li>
+        <li>今日收入 <p>20</p></li>
+    </ul>
+</div>
+<ul id="loupanList">
+    <li>
+        <div class="box-big" style="position: relative;">
+            <img src="" alt="" style="width: 100%;height: 200px;background: #AAA;">
+            <div  style="width: 50px;height: 50px;position: absolute;right: 20px;top:20px;border-radius: 50%;text-align: center;background: rgba(255,255,255,.5);">
+                <img src="../dist/img/erweima.png" alt="" style="width: 30px;margin-top: 10px;">
+            </div>
+            <span style="position: absolute;bottom: 100px;left: 0; padding: 8px 20px;display: inline-block;background: #e61e44;color: #fff;font-size: 1.2rem;">8万/平</span>
+            <div style="padding: 10px 12px;position: relative;">
+                <h2 style="margin: 0;">紫龙湾-首席滨河水岸华宅<i></i></h2>
+                <p style="font-size: 1rem;color: #C9CACA;" class="top10">邪恶哦看机会第五季答复的无机抗菌重庆科技萃取能开辟</p>
+                <div style="position: absolute;right: 20px;top: -35px;">
+                    <div style="position: relative;width: 120px;">
+                        <img src="../dist/img/touxiang.png" alt="" style="width: 60px;position: absolute;right: 0;border: 1px solid #fff;border-radius: 50%;">
+                        <span style="position: absolute;left: 0;color: #fff;font-size: 1rem;">销售名</span>
+                        <ul class="entry">
+                            <li class="first"><a href="#"><i class="fa fa-phone right5"></i>拨电话</a></li>
+                            <li><a href="#"><i class="fa fa-commenting right5"></i>发信息</a></li>
+                            <li class="last"><a href="#"><i class="fa fa-user-plus right5"></i>加好友</a></li>
+                            <li><div class="entry-trangle"></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="box-big top10" style="position: relative;">
+            <img src="" alt="" style="width: 100%;height: 200px;background: #AAA;">
+            <div  style="width: 50px;height: 50px;position: absolute;right: 20px;top:20px;border-radius: 50%;text-align: center;background: rgba(255,255,255,.5);">
+                <img src="../dist/img/erweima.png" alt="" style="width: 30px;margin-top: 10px;">
+            </div>
+            <span style="position: absolute;bottom: 100px;left: 0; padding: 8px 20px;display: inline-block;background: #e61e44;color: #fff;font-size: 1.2rem;">8万/平</span>
+            <div style="padding: 10px 12px;position: relative;">
+                <h2 style="margin: 0;">紫龙湾-首席滨河水岸华宅<i></i></h2>
+                <p style="font-size: 1rem;color: #C9CACA;" class="top10">邪恶哦看机会第五季答复的无机抗菌重庆科技萃取能开辟</p>
+                <div style="position: absolute;right: 20px;top: -35px;">
+                    <div style="position: relative;width: 120px;">
+                        <img src="../dist/img/touxiang.png" alt="" style="width: 60px;position: absolute;right: 0;border: 1px solid #fff;border-radius: 50%;">
+                        <span style="position: absolute;left: 0;color: #fff;font-size: 1rem;">销售名</span>
+                        <ul class="entry">
+                            <li class="first"><a href="#"><i class="fa fa-phone right5"></i>拨电话</a></li>
+                            <li><a href="#"><i class="fa fa-commenting right5"></i>发信息</a></li>
+                            <li class="last"><a href="#"><i class="fa fa-user-plus right5"></i>加好友</a></li>
+                            <li><div class="entry-trangle"></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+</body>
+<script src="../dist/js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function () {
+        $("#loupanList").on("click","li", function () {
+            window.location.href="loupanDetail.html";
+        });
+        $(".xunZhangWrap").on("click", function () {
+            window.location.href="../myYJ/zhuanQianBang.html";
+        });
+    });
+</script>
+</html>

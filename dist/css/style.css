@@ -1,0 +1,602 @@
+*{-webkit-touch-callout: none;-webkit-user-select:none}
+html,body{
+    background: #C9CACA;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 12px!important;
+    font-family: Microsoft YaHei;
+}
+a,button,input,textarea{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+p{
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a,a:visited,a:hover,a:active,a:focus{color: #000;text-decoration: none;}
+a.btn-navbar,a.btn-navbar:visited,a.btn-navbar:hover,a.btn-navbar:active,a.btn-navbar:focus{color: #fff;text-decoration: none;}
+.xiangdui{
+    position: relative;
+}
+.juedui{
+    position: absolute;
+    right: 0;
+    top: 1px;
+}
+.box-big{
+    display: block;
+    background: #fff;
+}
+.boxPadding{
+    padding: 10px 12px;
+}
+.box{
+    width: 100%;
+}
+.box3{
+    width: 30%;
+    display: inline-block;
+}
+.box7{
+    width: 70%;
+    display: inline-block;
+}
+.top10{
+    margin-top: 10px;
+}
+.bottom1{
+    width: 100%;
+    height: 1px;
+    background: #dddddd;
+}
+.bottom10{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.bottom20{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.bottom30{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.paddingBottom4{
+    padding-bottom: 4px!important;
+}
+.paddingTop4{
+    padding-top: 4px!important;
+}
+.paddingBottom10{
+    padding-bottom: 10px!important;
+}
+.paddingTop10{
+    padding-top: 10px!important;
+}
+.no-padding{
+    padding: 0!important;
+}
+.no-padding-left{
+    padding-left: 0!important;
+}
+.no-padding-right{
+    padding-right: 0!important;
+}
+.no-padding-bottom{
+    padding-bottom: 0!important;
+}
+.no-padding-top{
+    padding-top: 0!important;
+}
+.no-margin{
+    margin: 0;
+}
+.left10{
+    margin: 4px 0 0 20px;
+}
+.color000{
+    color: #000;
+}
+.color3232{
+    color: #323232;
+}
+.colora3a{
+    color: #a3a3a4;
+}
+.colore61f{
+    color: #e61f42;
+}
+.colorfff{
+    color: #fff;
+}
+.bge61{
+    background-color: #e61f42!important;
+}
+.bt1{
+    font-size: 1.4rem!important;
+}
+.bt1height{
+    height: 30px;
+    line-height: 30px;
+}
+.formal-font{
+    font-size: 1rem;
+}
+.formal-height{
+    height: 1.666rem;
+    line-height: 1.666rem;
+}
+.small-font{
+    font-size: 0.9rem;
+}
+.YJnavbar{
+    background: #2F2B2C;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+}
+.fa-navbar{
+    display: block;
+    width: 100%;
+}
+.btn-navbar{
+    font-size: 1.2rem;
+    padding: 10px 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    color: #fff;
+}
+.navbar-absolute-bottom{
+    position: fixed;
+    bottom: 0;
+}
+
+/*------------------通用--------------*/
+.user-info .level{
+    float: none;
+    border-radius: 0;
+    width:1.5rem;
+    height: 1rem;
+    border: 0;
+}
+
+/*------------------表格---------------*/
+.yjTable{
+    width: 100%;
+    background: #fff;
+    font-size: 1.2rem;
+    border-collapse:collapse;
+}
+.yjTable th{
+    color: #909090;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.yjTable tbody tr{
+    border-top: 1px solid #C9CACA;
+}
+.yjTable tbody tr:first-child{
+    border-top: 2px solid #C9CACA;
+}
+.yjTable tbody td{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.1rem;
+
+}
+
+/*------------------nav----------------*/
+.tabWrap{
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    background: #fff;
+    width: 100%;
+}
+.tabWrap .tab{
+    color: #909090;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    text-align: center;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;          /* Chrome */
+    flex: 1;
+}
+.tabWrap .tabActive{
+    color: #e61e44;
+    border-bottom: 2px solid #e61e44;
+}
+/*-------------列表--------------*/
+.listWrap{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    list-style: none;
+}
+.listItem{
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px 0 0 1rem;
+}
+.listItem .bottomLine{
+    padding:0 0 10px 0;
+    border-bottom: 1px solid #C9CACA;
+}
+.listItem .right{
+    position: absolute;
+    right: 1.2rem;
+}
+.no-border{border: none!important;}
+/*---------------imgBox-----------------*/
+.imgBox{
+    width: 100%;
+    position: relative;
+    display: block;
+    background: #fff;
+}
+.listImg{
+    width: 100%;
+    height: 16.666rem;
+}
+.round-button{
+    width: 4.1666rem;
+    height: 4.1666rem;
+    border-radius: 50%;
+    position: absolute;
+    background: rgba(255,255,255,.3);
+}
+.round-button>.qrcode,.round-button>img{
+    position: absolute;
+    top: 19%;
+    left: 19%;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.round-button1{
+    top: .8333rem;
+    right: .8333rem;
+}
+.round-button2{
+    top: 5.8333rem;
+    right: .8333rem;
+}
+
+/*---------------���޳ɹ�-------------*/
+.dzBox{
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-align: center;
+    /*position: relative;*/
+}
+.modal-header .close{
+    margin-top: 0;
+    outline: none;
+}
+
+/*-------------��ά��ɨ��------------*/
+.erw-saomiao{
+    width: 65%;
+    height: 65%;
+}
+/*-------------勋章样式-----------------*/
+.xunZhangWrap{
+    margin-left: 20px;
+}
+.xunZhang{
+    display: inline-block;
+    vertical-align:middle;
+    width:1.4rem;
+    height:1.4rem;
+    background: url('../img/xunzhang.png') no-repeat;
+    background-size:  1.4rem 1.4rem;
+}
+.paiMing{
+    font-size: 1.2rem;
+    vertical-align:middle;
+    font-style: normal;
+    font-weight: normal
+}
+.zhuanRu{
+    display: inline-block;
+    vertical-align:middle;
+    width: 1rem;
+    height: 1rem;
+    background: url('../img/zhuanru.png') no-repeat;
+    background-size: 1rem 1rem;
+}
+/*-----首页中点击销售人员头像出现的面板样式----*/
+.entry-trangle{
+    margin-left: 70px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fff;
+    z-index: 1;
+}
+.entry{
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    display: none;
+
+    /*设置圆角*/
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.entry-two{
+    top: -80px;
+}
+.entry-three{
+    top: -120px;
+}
+.entry-active{
+    display: block;
+}
+.entry li{
+    padding: 5px 0 5px;
+    font-size: 1.3rem;
+    line-height:24px;
+    background: #fff;
+    text-align: center;
+}
+.first{
+    border-radius: 5px 5px 0 0;
+}
+.circleBottom{
+    border-radius: 0 0 5px 5px;
+}
+.entry li:last-child{
+    padding: 0;
+    height:24px;
+    line-height:24px;
+    background: none;
+    text-align: center;
+}
+.right5{
+    font-size: 1.8rem!important;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/*user center*/
+.user-center{background: #e61e44;color: #fff;padding-bottom: 10px;}
+.user-center ul{margin: 0;padding: 0;width:100%;display: table;word-spacing: -1em;font-size: 1.2rem;}
+.user-center li{text-align:center;display:inline-block;border-right: 1px solid #fefefe;width: 33%;list-style: none;word-spacing: 0;font-size: 1.2rem;}
+.user-center li:nth-child(3){border-right: none;}
+.user-center li p{margin-bottom: 0;margin-left: 0;margin-right: 0;font-size: 1.4rem;}
+.user-info{position:relative;padding: 1.16rem;font-size: 1rem;}
+.user-info h3{font-size: 1.6rem;margin: 1.7rem 1rem 0;}
+.user-info p{margin: 0 1rem 0;font-size: 1.2rem;}
+.user-info img{border-radius: 50%; width: 80px;height: 80px;border:2px solid #fff;float: left;margin-right: 10px;}
+.my-package{position: absolute;right: 1.666rem;top: 4.1666rem;font-size: 1.6rem;vertical-align:middle;}
+.my-package span{width: 1.6rem;line-height: 1.6rem;vertical-align:middle;border-radius: 0.8rem;border:1px solid #fff;display: inline-block;font-size: 1rem;}
+
+.page{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.page:target{
+    display: block;
+}
+.page-active{
+    display: block!important;
+}
+.backBtn{
+    padding: 4px 0;
+}
+.page-title{
+    position: fixed;
+    background: #2F2B2C;
+    z-index: 999;
+}
+.nav-title{
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+/************我的一家******************/
+header ul{
+    width:100%;
+    background: #fff;
+    display: table;
+    word-spacing: -1em;
+    padding-top: 8px;
+}
+header ul li{
+    width: 25%;
+    display: inline-block;
+    word-spacing: 0;
+    text-align: center;
+}
+header ul li p{
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+.latestTuiGuang p{
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 1.4rem;
+}
+/*分销链*/
+.yjBtn{
+    font-size: 1.3rem;
+    background: #e61f42;
+    padding: 7px 15px 9px;
+    border-radius: 0.3rem;
+    color: #fff;
+}
+.icon{
+    display: inline-block;
+    width:1.5rem;
+    height:1.5rem;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.icon-tixian{
+    background: url("../img/tixian.png") no-repeat;
+}
+.text-red{color: #e61f42;}
+/*楼盘详情页面广告栏*/
+/*.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-pagination-bullet-active{
+    background: firebrick;
+}*/
+/*户型图*/
+.swiper-container {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    width: 24%;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+/*首页单个list的样式*/
+.loupan{
+    position: relative;
+}
+.loupanCover{
+    width: 100%;
+    height: 16.666rem;
+    background: #AAA;
+}
+.erweimaWrap{
+    width: 4.1666rem;
+    height: 4.1666rem;
+    position: absolute;
+    right: 1.666rem;
+    top:1.666rem;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(255,255,255,.5);
+}
+.erweima{
+    margin-top: 0.8333rem;
+    margin-left: 0;
+}
+.loupanPrice{
+    position: absolute;
+    bottom: 6.5rem;
+    left: 0;
+    padding: 0.5rem 1.666rem;
+    display: inline-block;
+    background: #e61e44;
+    color: #fff;
+    font-size: 1.4rem;
+}
+.loupanInfo{
+    padding: 0.8333rem 1rem;
+    position: relative;
+}
+.xiaoShouWrap{
+    position: absolute;
+    right: 20px;
+    top: -35px;
+}
+.xiaoShou{
+    position: relative;
+    width: 120px;
+}
+.xiaoShou img{
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.xiaoShou>span{
+    position: absolute;
+    color: #fff;
+    font-size: 1rem;
+    left: 2rem;
+}
+.hidden{
+    display: none;
+}
+/*二维码*/
+.mask,.mask1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("../img/maskbg_02.png") repeat;
+    z-index: 1000;
+}
+.ewm-box{
+    width: 220px;
+    top: 20%;
+    left: 50%;
+    margin-left: -110px;
+    position: absolute;
+}
+.ewm-img{
+    width: 220px;
+    background: #ffffff;
+    padding: 20px;
+}
+.ewm-close{
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    margin-left: -20px;
+}

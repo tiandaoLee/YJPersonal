@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/liy.css">
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <style>
+        .yjBtn{
+            font-size: 1rem;
+            background: #e61f42;
+            padding: 7px 15px 9px;
+            border-radius: 0.3rem;
+            color: #fff;
+        }
+        .icon{
+            display: inline-block;
+            width:1.2rem;
+            height:1.2rem;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .icon-tixian{
+            background: url("../dist/img/tixian.png") no-repeat;
+        }
+        .text-red{color: #e61f42;}
+    </style>
+</head>
+<body>
+    <div>
+        <p class="listItem formal-font paddingBottom10">
+            您的成交订单数：<span>5</span>单 <br>恭喜您，获得<span class="text-red">500元</span>意外之财
+            <span class="right" style="top: 1.3rem;">
+                <a class="yjBtn"><i class="icon icon-tixian"></i>提现</a>
+            </span>
+        </p>
+    </div>
+    <table class="yjTable" id="yijiList">
+        <thead>
+            <tr><th>账号</th><th>昵称</th><th>到期时间</th></tr>
+        </thead>
+        <tbody>
+            <tr class="text-red"><td>4214321</td><td>feqwrfq</td><td>2015.2.3</td></tr>
+            <tr><td>4214321</td><td>feqwrfq</td><td>2015.2.3</td></tr>
+            <tr><td>4214321</td><td>feqwrfq</td><td>2015.2.3</td></tr>
+            <tr><td>4214321</td><td>feqwrfq</td><td>2015.2.3</td></tr>
+        </tbody>
+    </table>
+</body>
+<script src="../dist/js/jquery-1.10.2.min.js"></script>
+<script>
+    $("#yijiList").find("tbody").on("click","tr", function () {
+        window.location.href="chengjiao.html";
+    });
+</script>
+</html>

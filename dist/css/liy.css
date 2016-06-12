@@ -1,0 +1,157 @@
+html,body{
+    background: #C9CACA;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+}
+p{
+    margin: 0;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.box-big{
+    display: block;
+    background: #fff;
+}
+.boxPadding{
+    padding: 10px 12px;
+}
+.box{
+    width: 100%;
+}
+.top10{
+    margin-top: 10px;
+}
+.bottom1{
+    width: 100%;
+    height: 1px;
+    background: #dddddd;
+}
+.bottom10{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.bottom20{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.bottom30{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.color000{
+    color: #000;
+}
+.color3232{
+    color: #323232;
+}
+.colora3a{
+    color: #a3a3a4;
+}
+.colore61f{
+    color: #e61f42;
+}
+.bt1{
+    font-size: 1.4rem!important;
+}
+.bt1height{
+    height: 30px;
+    line-height: 30px;
+}
+.formal-font{
+    font-size: 1.2rem;
+}
+.formal-height{
+    height: 20px;
+    line-height: 20px;
+}
+
+/*------------------通用--------------*/
+.level{
+    background-color: #d59961;
+    border-radius: 5px;
+    color: #fefefe;
+    padding: 0 5px;
+    font-style:normal
+}
+
+/*------------------表格---------------*/
+.yjTable{
+    width: 100%;
+    background: #fff;
+    font-size: 1.2rem;
+    border-collapse: collapse;
+}
+.yjTable th{
+    color: #909090;
+    padding: 10px 0;
+}
+.yjTable tbody tr{
+    border-top: 1px solid #C9CACA;
+}
+.yjTable tbody td{
+    text-align: center;
+    padding: 10px 0;
+}
+
+/*------------------nav----------------*/
+.tabWrap{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    background: #fff;
+    width: 100%;
+}
+.tabWrap .tab{
+    color: #909090;
+    font-size: 1.4rem;
+    padding: 10px 0;
+    text-align: center;
+    flex-grow: 1;
+}
+.tabWrap .tabActive{
+    color: #e61e44;
+    border-bottom: 2px solid #e61e44;
+}
+
+.listWrap{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    list-style: none;
+}
+.listItem{
+    font-size: 1.2rem;
+    position: relative;
+    padding: 10px 0 0 1rem;
+}
+.listItem .bottomLine{
+    padding:0 0 10px 0;
+    border-bottom: 1px solid #C9CACA;
+}
+.listItem .right{
+    position: absolute;
+    right: 1rem;
+}
+.no-border{border: none!important;}
+/*user center*/
+.user-center{background: #e61e44;color: #fff;padding-bottom: 10px;}
+.user-center ul{margin: 0;padding: 0;width:100%;display: table;word-spacing: -1em;font-size: 1.2rem;}
+.user-center li{text-align:center;display:inline-block;border-right: 1px solid #fefefe;width: 33%;list-style: none;word-spacing: 0;}
+.user-center li:nth-child(3){border-right: none;}
+.user-center li p{margin-bottom: 0;margin-left: 0;margin-right: 0;}
+.user-info{padding: 20px;font-size: 1rem;}
+.user-info h3{font-size: 1.4rem;margin: 10px 12px;}
+.user-info p{margin: 10px 12px;}
+.user-info img{border-radius: 50%; width: 80px;height: 80px;border:2px solid #fff;float: left;margin-right: 20px;}
+.level{background-color: #d59961;border-radius: 5px;color: #fefefe;padding: 0 5px;font-style:normal}
+.my-package{position: absolute;right: 20px;top: 50px;font-size: 1.6rem;vertical-align:middle;}
+.my-package span{width: 1.6rem;line-height: 1.6rem;vertical-align:middle;border-radius: 0.8rem;border:1px solid #fff;display: inline-block;font-size: 1rem;}
