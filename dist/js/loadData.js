@@ -100,6 +100,7 @@ function loadData(id){
             url:"/yjsWebService/build/getBuildInfoDetail",
             data:{token:YJSay.getToken(),buildId:getBuildId()},
             success: function (data) {
+				alert(JSON.stringify(data));
                 var _saleInfo = data.saleInfo;
                 if(_saleInfo&&!YJSay.isEmptyObject(_saleInfo)){
                     $("#louPanSaleName").text(_saleInfo.saleName);

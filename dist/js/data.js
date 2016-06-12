@@ -52,7 +52,6 @@ var YJSay = (function ($) {
                     }else if(this.is_weiXin()){
                         if(localStorage.getItem('weChartToken')){
                             token = localStorage.getItem('weChartToken');
-							alert(token);
                         }else{
                             location.href="login.html";
                         }
