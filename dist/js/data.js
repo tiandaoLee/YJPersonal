@@ -167,6 +167,36 @@ var YJSay = (function ($) {
             }
             return out;
         },
+		zhuanFa: function (buildId,type) {
+            if(type==5){
+                this.getData({
+                    url:"/yjsWebService/point/getHunheZhuanFaPoint",
+                    data:{token:this.getToken(),sourceId:buildId,securityKey:this.getSecurityKey()},
+                    success: function (data) {
+                        //alert(JSON.stringify(data));
+                        YJSay.setSecurityKey(data.pointInfo.securityKey);
+                    }
+                });
+            }else if(type==3){
+                this.getData({
+                    url:"/yjsWebService/point/getHaibaoZhuanFaPoint",
+                    data:{token:this.getToken(),sourceId:buildId,securityKey:this.getSecurityKey()},
+                    success: function (data) {
+                        //alert(JSON.stringify(data));
+                        YJSay.setSecurityKey(data.pointInfo.securityKey);
+                    }
+                });
+            }else if(type==1){
+                this.getData({
+                    url:"/yjsWebService/point/getLoushuZhuanfaPoint",
+                    data:{token:this.getToken(),sourceId:buildId,securityKey:this.getSecurityKey()},
+                    success: function (data) {
+                        //alert(JSON.stringify(data));
+                        YJSay.setSecurityKey(data.pointInfo.securityKey);
+                    }
+                });
+            }
+        },
         getUrlParamValue: function (url,param) {
             console.log(url+" "+param);
             var params=[],values=[],value="";
