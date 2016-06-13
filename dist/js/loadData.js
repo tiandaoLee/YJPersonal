@@ -119,11 +119,16 @@ function loadData(id){
                 if(_loupan&&!YJSay.isEmptyObject(_loupan)){
                     var buildName = _loupan.buildName;
                     var buildAddress = _loupan.addressDisplay;
+                    buildAddress = buildAddress.split('');
+                    for (var i = 14; i < buildAddress.length; i += 15){
+                        buildAddress[i] += '\<br\/\>';
+                    }
+                    buildAddress.join('');
                     $("#cover").attr("src",_loupan.buildImage);
                     $("#salePrice").text(_loupan.salePrice);
                     $("#openTime").text(_loupan.openTtime);
                     $("#saleStatus").text(["预售","开售","销售结束"][_loupan.saleStatus-1]);
-                    $("#addressDisplay").text(_loupan.addressDisplay);
+                    $("#addressDisplay").html(buildAddress);
                     $("#developerName").text(_loupan.developerName);
                     /*$("#buildType").text(loupan.buildType);*/
                     /*$("#total").text(loupan.total);*/
@@ -151,7 +156,7 @@ function loadData(id){
                         url:"/yjsWebService/config/getBuildLocation",
                         data:{buildId:getBuildId()},
                         success: function (data) {
-                            YJSay.useNativeFunction("setLocation",data.lat+"&"+data.lng,buildName,buildAddress);
+                            YJSay.useNativeFunction("setLocation",data.lat+"&"+data.lng,buildName,_loupan.addressDisplay);
                         },error: function () {
                             alert("获取数据失败");
                         }
