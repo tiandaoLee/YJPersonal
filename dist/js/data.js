@@ -191,9 +191,9 @@ var YJSay = (function ($) {
         },
         zhuanFa: function (activeId,type) {
             var _self = this;
+			_self.useNativeFunction("hideBottom",true);
 			_self.checkSecurityKey(type,activeId);
             if(type==5){
-				alert("转发活动");
                 _self.getData({
                     url:"/yjsWebService/point/getHunheZhuanFaPoint",
                     data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
