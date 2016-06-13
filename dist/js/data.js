@@ -46,15 +46,11 @@ var YJSay = (function ($) {
                 token = "CA4F6D903A72454CA74787EEAEA2D227";
                 return token;
             }else{
-				alert("不是手机");
                 if(!token){
-					alert("没有token");
                     if(window.bridge){
                         token =  this.useNativeFunction("getToken");
                     }else if(this.is_weiXin()){
-						alert("是微信");
                         if(localStorage.getItem('weChartToken')){
-							alert("有token");
                             token = localStorage.getItem('weChartToken');
                         }else{
                             location.href="login.html";

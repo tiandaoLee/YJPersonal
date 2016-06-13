@@ -17,12 +17,12 @@
     <script type="text/javascript">
 		alert(document.referrer);
         var baseUrl = 'http://src.yjsvip.com/',  //接口地址
-            orgUrl = baseUrl+'/img/YJPersonal/index.html#YJ_louPanDetail?buildId=195',  //登录成功跳转相应业务逻辑地址
-            weChartToken = localStorage.getItem('weChartToken');
-        if(weChartToken){
-            console.log('login success');
-            location.href=orgUrl;
-        }else{
+            orgUrl = baseUrl+'/img/YJPersonal/index.html#YJ_louPanDetail?buildId=195'  //登录成功跳转相应业务逻辑地址
+            //weChartToken = localStorage.getItem('weChartToken');
+        //if(weChartToken){
+        //    console.log('login success');
+        //    location.href=orgUrl;
+        //}else{
             $.ajax({
                 url: baseUrl+'yjsWebService/weixin/user/getToken?callback=?', 
                 dataType: 'jsonp',
@@ -47,7 +47,7 @@
                     }
                 }
             })
-        }
+        //}
     </script>
 </body>
 </html>
