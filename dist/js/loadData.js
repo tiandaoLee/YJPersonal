@@ -8,9 +8,8 @@ function loadData(id){
         if(!test){
             YJSay.hideBottom(false);
             //YJSay.hideTop(false);
-            YJSay.setTitle("1家说");
         }
-		alert(YJSay.getToken());
+        YJSay.setTitle("1家说");
         YJSay.getData({
             url:"/yjsWebService/index/getMyIndex",
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
@@ -97,15 +96,15 @@ function loadData(id){
         if(!test){
             YJSay.hideBottom(true);
             //YJSay.hideTop(true);
-            YJSay.setTitle("楼盘详情");
         }
+        YJSay.setTitle("楼盘详情");
         YJSay.getData({
             url:"/yjsWebService/build/getBuildInfoDetail",
             data:{token:YJSay.getToken(),buildId:getBuildId()},
             success: function (data) {
                 if(data.code==8003&&YJSay.is_weiXin()){
                     location.href="login.html";
-					return;
+                    return;
                 }
                 var _saleInfo = data.saleInfo;
                 if(_saleInfo&&!YJSay.isEmptyObject(_saleInfo)){
@@ -758,8 +757,9 @@ function loadData(id){
             success: function (data) {
                 console.log(data);
                 var _html="";
+				var alarmList = YJSay.getAlarmList();
                 $.each(data.list, function (index,ele) {
-                    var hasAlarm = YJSay.getAlarmList().split(",").indexOf(this.id.toString())!=-1;
+                    var hasAlarm = alarmList.split(",").indexOf(this.id.toString())!=-1;
                     var _status = activeStatus(this.status,this.startTime,this.endTime);
                     _html+='<div class="imgBox '+(index?"top10":"")+'" id='+this.buildId+'>'+
                                 '<img class="listImg" src='+this.coverPicture+' id='+this.id+' data-type='+(this.hongbaoId?"hongbao":"baoming")+'>'+
@@ -1309,11 +1309,11 @@ function loadData(id){
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
             success: function (data) {
                 alert(JSON.stringify(data));
-				alert(YJSay.getAlarmList());
                 console.log(data);
                 var _html="";
+				var alarmList = YJSay.getAlarmList();
                 $.each(data.list, function (index,ele) {
-                    var hasAlarm = YJSay.getAlarmList().split(",").indexOf(this.id.toString())!=-1;
+                    var hasAlarm = alarmList.split(",").indexOf(this.id.toString())!=-1;
                     var _status = activeStatus(this.status,this.startTime,this.endTime);
                     if(this.type==5){
                         _html+='<li class="'+(index?"top10":"")+'"><div class="imgBox" id='+this.buildId+'>'+
