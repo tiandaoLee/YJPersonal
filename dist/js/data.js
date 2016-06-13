@@ -36,7 +36,11 @@ var YJSay = (function ($) {
             history.go(-1);
         },
         setTitle: function (title) {
-            this.useNativeFunction("setTitle",title);
+            if(this.is_weiXin()){
+                document.title = title;
+            }else{
+                this.useNativeFunction("setTitle",title);
+            }
         },
         setToken: function (value) {
             token = value;
