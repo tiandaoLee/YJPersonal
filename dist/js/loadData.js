@@ -103,7 +103,7 @@ function loadData(id){
             url:"/yjsWebService/build/getBuildInfoDetail",
             data:{token:YJSay.getToken(),buildId:getBuildId()},
             success: function (data) {
-                if(data.code==8003&&!is_PC()){
+                if(data.code==8003&&YJSay.is_weiXin()){
                     location.href="login.html";
 					return;
                 }

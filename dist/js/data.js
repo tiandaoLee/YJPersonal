@@ -5,7 +5,7 @@
 var YJSay = (function ($) {
     var token = "";
     var securityKey="";
-    var alarmList;
+    var alarmList="";
     var addSaleStatus;
     return {
         baseUrl:"http://src.yjsvip.com",
@@ -24,8 +24,7 @@ var YJSay = (function ($) {
                 complete: function () {
                     $(".mask1").addClass("hidden");
                 },
-                error: function (msg) {
-					alert(JSON.stringify(msg));
+                error: function () {
                     console.log("获取数据失败："+option.url);
                 }
             });
@@ -69,11 +68,11 @@ var YJSay = (function ($) {
                 }
             }
         },
-        setSecurityKey: function (securityKey) {
-            this.securityKey = securityKey;
+        setSecurityKey: function (security) {
+            securityKey = security;
         },
         getSecurityKey: function () {
-            return this.securityKey;
+            return securityKey;
         },
         is_weiXin:function(){
             var ua = navigator.userAgent.toLowerCase();
@@ -105,15 +104,19 @@ var YJSay = (function ($) {
             alarmList = list;
         },
         getAlarmList: function () {
-            if(!test&&!alarmList){
-                if(window.bridge){
-                    alarmList =  bridge.getAlarmList("a","b","c");
-                }else{
-                    this.useNativeFunction("YJSay.setAlarmList");
-                }
+            if (is_PC()||this.is_weiXin()){
                 return alarmList;
             }else{
-                return alarmList;
+                if(!test&&!alarmList){
+                    if(window.bridge){
+                        alarmList =  bridge.getAlarmList("a","b","c");
+                    }else{
+                        this.useNativeFunction("YJSay.setAlarmList");
+                    }
+                    return alarmList;
+                }else{
+                    return alarmList;
+                }
             }
         },
         addSale: function (id) {
