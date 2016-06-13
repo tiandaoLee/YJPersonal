@@ -189,12 +189,13 @@ var YJSay = (function ($) {
             }
             return out;
         },
-        zhuanFa: function (activeId,type) {
+        zhuanFa: function (activeId) {
             var _self = this;
 			_self.useNativeFunction("hideBottom",true);
 			_self.checkSecurityKey(type,activeId);
+			var type=5;
             if(type==5){
-                _self.getData({
+            /*    _self.getData({
                     url:"/yjsWebService/point/getHunheZhuanFaPoint",
                     data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
                     success: function (data) {
@@ -202,6 +203,7 @@ var YJSay = (function ($) {
                         _self.setSecurityKey(data.pointInfo.securityKey);
                     }
                 });
+				*/
             }else if(type==3){
                 _self.getData({
                     url:"/yjsWebService/point/getHaibaoZhuanFaPoint",
