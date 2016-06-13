@@ -33,10 +33,11 @@ var YJSay = (function ($) {
             if($(".mask").is(":visible")){
                 $(".mask").addClass('hidden');
             }
+			history.go(-1);
 			if($("iframe").attr("src")){
 				$("iframe").attr("src","").html("");
 			}
-            history.go(-1);
+            
         },
         setTitle: function (title) {
             if(this.is_weiXin()){
