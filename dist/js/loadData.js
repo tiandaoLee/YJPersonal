@@ -91,8 +91,6 @@ function loadData(id){
                         $(this).find(".erweima").qrcode({width:30,height:30,text: YJSay.utf16to8($(this).find(".erweimaWrap").attr("data-src"))});
                     });
                 }
-            },error: function () {
-                alert("获取数据失败");
             }
         })
     }else if(id=="#YJ_louPanDetail"&&$("#YJ_louPanIntro").is(":visible")){
