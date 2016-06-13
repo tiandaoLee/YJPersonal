@@ -1015,6 +1015,7 @@
                 .attr("data-from","home-active")
                 .attr("data-type",$(this).attr("data-type"))
                 .find(".dz").removeClass("hidden");
+        YJSay.checkSecurityKey("5",id);
         YJSay.getData({
             url:"/yjsWebService/point/getHunheViewPoint",
             data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
@@ -1088,6 +1089,7 @@
                 .attr("data-from","home-loushu")
                 .attr("data-type",$(this).attr("data-type"))
                 .find(".dz").removeClass("hidden");
+        YJSay.checkSecurityKey("1",id);
         YJSay.getData({
             url:"/yjsWebService/point/getLoushuViewPoint",
             data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
@@ -1144,10 +1146,12 @@
             alert("已点赞");
         }else{
             var from = $("#YJ_activeContent").attr("data-from");
+            var id = $("#YJ_activeContent").attr("data-activeId");
             if(from=="home-active"||from=="tuiguang-active"){
+                YJSay.checkSecurityKey("5",id);
                 YJSay.getData({
                     url:"/yjsWebService/point/getHunheDianZanPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
+                    data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
                     success: function (data) {
                         var _pointInfo = data.pointInfo;
                         if(_pointInfo&&!YJSay.isEmptyObject(_pointInfo)){
@@ -1163,9 +1167,10 @@
             }else if(from=="home-haibao"||from=="tuiguang-haibao"){
 
             }else if(from=="home-loushu"||from=="tuiguang-loushu"){
+                YJSay.checkSecurityKey("1",id);
                 YJSay.getData({
                     url:"/yjsWebService/point/getLoushuDianzanPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
+                    data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
                     success: function (data) {
                         var _pointInfo = data.pointInfo;
                         if(_pointInfo&&!YJSay.isEmptyObject(_pointInfo)){
@@ -1187,55 +1192,34 @@
             alert("已关注");
         }else{
             var from = $("#YJ_activeContent").attr("data-from");
+            var id= $("#YJ_activeContent").attr("data-activeId");
             if(from=="home-active"||from=="tuiguang-active"){
+                YJSay.checkSecurityKey("5",id);
                 YJSay.getData({
                     url:"/yjsWebService/point/getHunheGuanZhuPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
+                    data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
                     success: function (data) {
                         alert(JSON.stringify(data));
                         $("#gzModal").modal("show");
                     }
                 });
             }else if(from=="home-haibao"||from=="tuiguang-haibao"){
+                YJSay.checkSecurityKey("3",id);
                 YJSay.getData({
                     url:"/yjsWebService/point/getHaibaoGuanZhuPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
+                    data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
                     success: function (data) {
                         alert(JSON.stringify(data));
                         $("#gzModal").modal("show");
                     }
                 });
             }else if(from=="home-loushu"||from=="tuiguang-loushu"){
+                YJSay.checkSecurityKey("1",id);
                 YJSay.getData({
                     url:"/yjsWebService/point/getLoushuGuanZhuPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
+                    data:{token:YJSay.getToken(),sourceId:id,securityKey:YJSay.getSecurityKey()},
                     success: function (data) {
                         alert(JSON.stringify(data));
-                        $("#gzModal").modal("show");
-                    }
-                });
-            }var from = $("#YJ_activeContent").attr("data-from");
-            if(from=="home-active"||from=="tuiguang-active"){
-                YJSay.getData({
-                    url:"/yjsWebService/point/getHunheGuanZhuPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
-                    success: function (data) {
-                        $("#gzModal").modal("show");
-                    }
-                });
-            }else if(from=="home-haibao"||from=="tuiguang-haibao"){
-                YJSay.getData({
-                    url:"/yjsWebService/point/getHaibaoGuanZhuPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
-                    success: function (data) {
-                        $("#gzModal").modal("show");
-                    }
-                });
-            }else if(from=="home-loushu"||from=="tuiguang-loushu"){
-                YJSay.getData({
-                    url:"/yjsWebService/point/getLoushuGuanZhuPoint",
-                    data:{token:YJSay.getToken(),sourceId:$("#YJ_activeContent").attr("data-activeId"),securityKey:YJSay.getSecurityKey()},
-                    success: function (data) {
                         $("#gzModal").modal("show");
                     }
                 });
@@ -1249,6 +1233,7 @@
         if(from=="home-active"||from=="tuiguang-active") {
             YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/diy/"+buildId+"/"+activeId+"/1.html?5&&"+activeId);
         }else if(from=="home-haibao"||from=="tuiguang-haibao"){
+            YJSay.checkSecurityKey("3",activeId);
             YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?3&&"+activeId+"&&"+encodeURIComponent("http://10.0.0.120/web/YJPersonal/#YJ_louPanDetail?buildId="+buildId+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-loushu"||from=="tuiguang-loushu"){
             YJSay.transmit(path+"?1&&"+activeId);

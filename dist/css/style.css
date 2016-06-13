@@ -232,16 +232,21 @@ a.btn-navbar,a.btn-navbar:visited,a.btn-navbar:hover,a.btn-navbar:active,a.btn-n
 }
 .listItem{
     font-size: 1.1rem;
-    position: relative;
     padding: 10px 0 0 1rem;
+    vertical-align: middle;
+}
+.listItem:after{
+    content: "";
+    display: block;
+    clear: both;
 }
 .listItem .bottomLine{
     padding:0 0 10px 0;
     border-bottom: 1px solid #C9CACA;
 }
 .listItem .right{
-    position: absolute;
-    right: 1.2rem;
+    float: right;
+    margin-right: 1.2rem;
 }
 .no-border{border: none!important;}
 /*---------------imgBox-----------------*/

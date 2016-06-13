@@ -36,21 +36,14 @@ function loadData(id){
                         var sale = {saleUserAccountId:this.saleUserAccountId,tel:this.tel,saleName:this.saleName,saleImage:this.saleImage};
                         var buildName = this.buildName;
                         var buildId = this.buildId;
+                        YJSay.checkSecurityKey("0",buildId);
                         _html+='<li id='+buildId+' class="loupanItem" data-salename='+this.saleName+' data-saletel='+this.tel+'>'+
                             '<div class="box-big loupan '+(index?"top10":"")+'">'+
-                            '<img src='+this.buildImage+' alt="楼盘封面" class="loupanCover">';
-                            YJSay.getData({
-                                url:"/yjsWebService/web/security/getManagerStartSecurity",
-                                data:{token:YJSay.getToken(),type:0,buildId:buildId},
-                                async:false,
-                                success: function (data) {
-                                    data =eval("("+data+")");
-                                    _html+='<div class="erweimaWrap" data-src="YJSay.type=build&'+data.securityKey+'&'+buildId+'&'+buildName+'&'+_userInfo.name+'">'+
-                                    '<div class="erweima"></div>'+
-                                    '</div>';
-                                }
-                            });
-                            _html+='<div class="loupanPrice colorfff">'+this.salePrice+'元/平方米</div>'+
+                            '<img src='+this.buildImage+' alt="楼盘封面" class="loupanCover">'+
+                            '<div class="erweimaWrap" data-src="YJSay.type=build&'+YJSay.getSecurityKey()+'&'+buildId+'&'+buildName+'&'+_userInfo.name+'">'+
+                            '<div class="erweima"></div>'+
+                            '</div>'+
+                            '<div class="loupanPrice colorfff">'+this.salePrice+'元/平方米</div>'+
                             '<div class="loupanInfo">'+
                             '<h4 class="no-margin">'+buildName+'<i></i></h4>'+
                             '<p class="top10 small-font colora3a">'+this.buildDes+'</p>'+

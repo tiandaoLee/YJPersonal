@@ -74,6 +74,20 @@ var YJSay = (function ($) {
         getSecurityKey: function () {
             return securityKey;
         },
+        checkSecurityKey: function (type,activeId) {
+            var _self = this;
+            if(!this.getSecurityKey()){
+                this.getData({
+                    url:"/yjsWebService/web/security/getManagerStartSecurity",
+                    data:(type==0?{token:this.getToken(),buildId:activeId}:{token:this.getToken(),type:type,activeId:activeId}),
+                    async:false,
+                    success: function (data) {
+                        data = eval("("+data+")");
+                        _self.setSecurityKey(data.securityKey);
+                    }
+                });
+            }
+        },
         is_weiXin:function(){
             var ua = navigator.userAgent.toLowerCase();
             return ua.match(/MicroMessenger/i)=="micromessenger";
