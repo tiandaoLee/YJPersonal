@@ -38,6 +38,7 @@ var YJSay = (function ($) {
         setTitle: function (title) {
             if(this.is_weiXin()){
                 document.title = title;
+				alert(document.title);
             }else{
                 this.useNativeFunction("setTitle",title);
             }
