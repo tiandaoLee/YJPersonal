@@ -36,7 +36,7 @@ var YJSay = (function ($) {
             history.go(-1);
         },
         setTitle: function (title) {
-            if(is_PC()){
+            if(this.is_weiXin()){
                 document.title = title;
 				alert(document.title);
             }else{
