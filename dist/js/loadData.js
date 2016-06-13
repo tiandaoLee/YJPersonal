@@ -10,6 +10,7 @@ function loadData(id){
             //YJSay.hideTop(false);
             YJSay.setTitle("1家说");
         }
+		alert(YJSay.getToken());
         YJSay.getData({
             url:"/yjsWebService/index/getMyIndex",
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},

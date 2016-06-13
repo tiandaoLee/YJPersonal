@@ -38,7 +38,6 @@ var YJSay = (function ($) {
         setTitle: function (title) {
             if(this.is_weiXin()){
                 document.title = title;
-				alert(document.title);
             }else{
                 this.useNativeFunction("setTitle",title);
             }
@@ -65,7 +64,6 @@ var YJSay = (function ($) {
                     }
                     return token;
                 }else{
-					alert("有token");
                     return token;
                 }
             }
