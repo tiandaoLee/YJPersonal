@@ -1034,7 +1034,7 @@
                         var height = document.body.clientHeight;
                         var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                         $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                                .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+$("#YJ_louPanDetail").attr("data-loupanid")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                                .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+getBuildId()+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                         changePage("YJ_activeContent");
                     }
                 });
@@ -1066,7 +1066,6 @@
                 changePage("YJ_activeContent");
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
-				alert('http://src.yjsvip.com/img/haibao/jsEditor/poster/'+getBuildId()+'/'+id+'/1.html');
                 $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
                         .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+getBuildId()+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
             }
@@ -1248,11 +1247,11 @@
         var buildId = $("#YJ_louPanDetail").attr("data-loupanid");
         var activeId = $("#YJ_activeContent").attr("data-activeId");
         if(from=="home-active"||from=="tuiguang-active") {
-            YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/diy/"+buildId+"/"+activeId+"/1.html?"+YJSay.getSecurityKey()+"&5");
+            YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/diy/"+buildId+"/"+activeId+"/1.html?5&&"+activeId);
         }else if(from=="home-haibao"||from=="tuiguang-haibao"){
-            YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?"+YJSay.getSecurityKey()+"&3");
+            YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?3&&"+activeId+"&&"+encodeURIComponent("http://10.0.0.120/web/YJPersonal/#YJ_louPanDetail?buildId="+buildId+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-loushu"||from=="tuiguang-loushu"){
-            YJSay.transmit(path+"?"+YJSay.getSecurityKey()+"&1");
+            YJSay.transmit(path+"?1&&"+activeId);
         }
     });
     $("#YJ_promotionAward").on("click", function () {
@@ -1312,6 +1311,7 @@
     });
     $("#YJ_MYTUIGUANG_ACTIVE").on("click",".listImg", function () {
         var id=$(this).attr("id");
+        var buildId = $(this).closest(".imgBox").attr("id");
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("活动名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-active")
@@ -1335,7 +1335,7 @@
                         var height = document.body.clientHeight;
                         var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                         $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                                .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                                .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+buildId+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                     }
                 });
             }
@@ -1351,6 +1351,7 @@
     });
     $("#YJ_MYTUIGUANG_HAIBAO").on("click",".listImg", function () {
         var id=$(this).attr("id");
+        var buildId = $(this).closest(".imgBox").attr("id");
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("海报名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-haibao")
@@ -1366,7 +1367,7 @@
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                 $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                        .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                        .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+buildId+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
             }
         });
     }).on("click",".round-button2", function () {
@@ -1420,6 +1421,7 @@
     });
     $("#YJ_myYJ").on("click",".listImg", function () {
         var id=$(this).attr("id");
+        var buildId = $(this).closest(".imgBox").attr("id");
         var type = $(this).attr("data-type");
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("活动名称");
         $("#YJ_activeContent").attr("data-activeId",id)
@@ -1445,7 +1447,7 @@
                             var height = document.body.clientHeight;
                             var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                             $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                                    .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                                    .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/diy/'+buildId+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                         }
                     });
                 }
@@ -1462,7 +1464,7 @@
                     var height = document.body.clientHeight;
                     var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                     $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-                            .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+$(this).closest(".imgBox").attr("id")+'/'+$(this).attr("id")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                            .html('<iframe id="testIframe" src="http://src.yjsvip.com/img/haibao/jsEditor/poster/'+buildId+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
                 }
             });
         }else if(type=="loushu"){

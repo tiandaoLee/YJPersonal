@@ -167,32 +167,33 @@ var YJSay = (function ($) {
             }
             return out;
         },
-		zhuanFa: function (buildId,type) {
+        zhuanFa: function (activeId,type) {
+            var _self = this;
             if(type==5){
-                this.getData({
+                _self.getData({
                     url:"/yjsWebService/point/getHunheZhuanFaPoint",
-                    data:{token:this.getToken(),sourceId:buildId,securityKey:this.getSecurityKey()},
+                    data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
                     success: function (data) {
                         //alert(JSON.stringify(data));
-                        YJSay.setSecurityKey(data.pointInfo.securityKey);
+                        _self.setSecurityKey(data.pointInfo.securityKey);
                     }
                 });
             }else if(type==3){
-                this.getData({
+                _self.getData({
                     url:"/yjsWebService/point/getHaibaoZhuanFaPoint",
-                    data:{token:this.getToken(),sourceId:buildId,securityKey:this.getSecurityKey()},
+                    data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
                     success: function (data) {
                         //alert(JSON.stringify(data));
-                        YJSay.setSecurityKey(data.pointInfo.securityKey);
+                        _self.setSecurityKey(data.pointInfo.securityKey);
                     }
                 });
             }else if(type==1){
-                this.getData({
+                _self.getData({
                     url:"/yjsWebService/point/getLoushuZhuanfaPoint",
-                    data:{token:this.getToken(),sourceId:buildId,securityKey:this.getSecurityKey()},
+                    data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
                     success: function (data) {
                         //alert(JSON.stringify(data));
-                        YJSay.setSecurityKey(data.pointInfo.securityKey);
+                        _self.setSecurityKey(data.pointInfo.securityKey);
                     }
                 });
             }
