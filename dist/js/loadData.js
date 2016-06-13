@@ -1309,6 +1309,7 @@ function loadData(id){
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
             success: function (data) {
                 alert(JSON.stringify(data));
+				alert(YJSay.getAlarmList());
                 console.log(data);
                 var _html="";
                 $.each(data.list, function (index,ele) {
