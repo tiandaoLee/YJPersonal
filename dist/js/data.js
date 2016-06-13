@@ -25,7 +25,7 @@ var YJSay = (function ($) {
                     $(".mask1").addClass("hidden");
                 },
                 error: function (msg) {
-					alert(msg);
+					alert(JSON.stringify(msg));
                     console.log("获取数据失败："+option.url);
                 }
             });
