@@ -194,7 +194,6 @@ var YJSay = (function ($) {
         },
         zhuanFa: function (activeId,type) {
             var _self = this;
-			_self.useNativeFunction("hideBottom",true);
 			_self.checkSecurityKey(type,activeId);
             if(type==5){
                 _self.getData({
