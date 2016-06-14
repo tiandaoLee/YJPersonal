@@ -35,7 +35,7 @@ var YJSay = (function ($) {
             }
 			history.back();
 			if($("iframe").attr("src")){
-				$("iframe").attr("src","").html("");
+				$("iframe").html("");
 			}
         },
         setTitle: function (title) {
