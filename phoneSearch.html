@@ -27,10 +27,16 @@
 <body>
     <div class="loginLi loginLi-bottom">
         <img src="dist/img/phoneSearch_03.png" style="vertical-align: middle;">
-        <input placeholder="请输入手机号码"/>
+        <input placeholder="请输入手机号码" type="number" id="saleTel"/>
     </div>
     <button class="phoneSearch-button">
         搜索
     </button>
+	<script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
+	<script>
+		$(".phoneSearch-button").on("click",function(){
+			alert($("#saleTel").val());
+		});
+	</script>
 </body>
 </html>
