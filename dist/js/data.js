@@ -60,6 +60,8 @@ var YJSay = (function ($) {
                         if(localStorage.getItem('weChartToken')){
                             token = localStorage.getItem('weChartToken');
                         }else{
+							localStorage.setItem("locationHref",location.hash);
+							alert(localStorage.getItem("locationHref"));
                             location.href="login.html";
                         }
                     }else{
