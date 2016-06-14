@@ -7,6 +7,51 @@ html,body{
     font-size: 12px!important;
     font-family: Microsoft YaHei;
 }
+.loginLogo{
+    text-align: center;
+}
+.loginLogo img{
+    margin: 35px 0;
+}
+.loginLi{
+    background: #fff;
+    padding: 14px 16px;
+    color: #b4b4b4;
+    font-size: 1.2rem;
+}
+.loginLi-bottom{
+    margin-bottom: 1px;
+}
+.loginLi input{
+    border: none;
+    outline: none;
+}
+.loginButton{
+    width: 80%;
+    height: 50px;
+    margin: 25px 10%;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background: #e61f42;
+    color: #fff;
+}
+.errorMessage{
+    color: #e61f42;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    float: right;
+    display: none;
+}
+.loginzc{
+    padding: 14px 16px;
+    list-style: none;
+}
+.loginzc a{
+    color: #e61f42;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
 a,button,input,textarea{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

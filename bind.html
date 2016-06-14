@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定手机号</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/style.css" />
+
+</head>
+<body>
+    <div class="page" id="login">
+        <div class="loginLogo">
+            <img src="dist/img/loginLogo_03.png">
+        </div>
+        <ul class="box">
+            <li class="loginLi loginLi-bottom">
+                <input placeholder="账号" name="username" id="username" />
+                <span class="errorMessage">该手机号未注册</span>
+            </li>
+            <li class="loginLi loginLi-bottom">
+                <input placeholder="密码" name="password" id="password" />
+                <span class="errorMessage">密码错误</span>
+            </li>
+            <li class="loginzc" style="float: right;color: #e61f42;">
+                <a href="register.html">注册</a>
+            </li>
+        </ul>
+        <div class="box">
+            <button class="loginButton">绑定</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript">
+$(function(){
+    var baseUrl = 'http://src.yjsvip.com/',  //接口地址
+        orgUrl = '',  //登录成功跳转相应业务逻辑地址
+        //referrer = document.referrer,
+        weChartToken = localStorage.getItem('weChartToken');
+
+    //if(referrer.indexOf('wexin')===-1){
+    //    localStorage.setItem('referrer',referrer);
+    //}
+    if(weChartToken){
+        console.log('login success');
+        _bind(weChartToken);
+    }else{
+        $.ajax({
+            url: baseUrl+'yjsWebService/weixin/user/getToken?callback=?', 
+            dataType: 'jsonp',
+            success: function(data){
+                console.log(data);
+                var _weChartToken = data.token;
+                if(_weChartToken){
+                    _bind(_weChartToken);
+                    localStorage.setItem('weChartToken',_weChartToken);
+                }else{
+                    $.ajax({
+                        url: baseUrl+'yjsWebService/weixin/user/saveUrl?callback=?', 
+                        dataType: 'jsonp',
+                        data:{'url':location.href},
+                        success: function(data){
+                            var url = data.url;
+                            if(url){
+                                location.href = data.url;
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    }
+
+    function _bind(token){
+        $.ajax({
+            url: baseUrl+'/yjsWebService/weixin/pubNum/toBangAccount?callback=?', 
+            dataType: 'jsonp',
+            data:{'token': token, 'username':$('#username').val(), 'password':$('#password').val()},
+            success: function(data){
+                var code = data.code;
+                if(code==='200'){
+                    // location.href = data.url;
+                    location.href = localStorage.getItem('referrer');
+                }else if(code==='8003'){
+                    alert('账号错误');
+                }else if(code==='8004'){
+                    alert('密码错误');
+                }else{
+                    alert('未知错误');
+                }
+            }
+        })
+    }
+})
+    </script>
+</body>
+</html>
