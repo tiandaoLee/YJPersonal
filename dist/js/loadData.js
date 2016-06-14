@@ -485,6 +485,10 @@ function loadData(id){
             success: function (data) {
                 console.log(data);
                 var _point = data.pointInfo;
+				$("#YJ_ZHUANFA_JIFEN").closest("li").show();
+                $("#YJ_GUANZHU_JIFEN").closest("li").show();
+                $("#YJ_DIANZHAN_JIFEN").closest("li").show();
+                $("#YJ_LIULAN_JIFEN").closest("li").show();
                 if(_point&&!YJSay.isEmptyObject(_point)){
                     $("#YJ_ZHUANFA_JIFEN").text(_point.zhuanfa+"分");
                     $("#YJ_GUANZHU_JIFEN").text(_point.guanzhu+"分");
@@ -615,6 +619,10 @@ function loadData(id){
             success: function (data) {
                 console.log(data);
                 var _point = data.pointInfo;
+				$("#YJ_ZHUANFA_JIFEN").closest("li").show();
+                $("#YJ_GUANZHU_JIFEN").closest("li").show();
+                $("#YJ_DIANZHAN_JIFEN").closest("li").show();
+                $("#YJ_LIULAN_JIFEN").closest("li").show();
                 if(_point&&!YJSay.isEmptyObject(_point)){
                     $("#YJ_ZHUANFA_JIFEN").text(_point.zhuanfa+"分");
                     $("#YJ_GUANZHU_JIFEN").text(_point.guanzhu+"分");
@@ -869,6 +877,10 @@ function loadData(id){
             success: function (data) {
                 console.log(data);
                 var _point = data.pointInfo;
+				$("#YJ_ZHUANFA_JIFEN").closest("li").show();
+                $("#YJ_GUANZHU_JIFEN").closest("li").show();
+                $("#YJ_DIANZHAN_JIFEN").closest("li").show();
+                $("#YJ_LIULAN_JIFEN").closest("li").show();
                 if(_point&&!YJSay.isEmptyObject(_point)){
                     $("#YJ_ZHUANFA_JIFEN").text(_point.zhuanfa+"分");
                     $("#YJ_GUANZHU_JIFEN").text(_point.guanzhu+"分");
@@ -1026,6 +1038,10 @@ function loadData(id){
             success: function (data) {
                 console.log(data);
                 var _active = data.haibao;
+				$("#YJ_ZHUANFA_JIFEN").closest("li").show();
+                $("#YJ_GUANZHU_JIFEN").closest("li").show();
+                $("#YJ_DIANZHAN_JIFEN").closest("li").show();
+                $("#YJ_LIULAN_JIFEN").closest("li").show();
                 if(_active&&!YJSay.isEmptyObject(_active)){
                     $("#YJ_ACTIVE_NAME").text(_active.appName);
                     $("#YJ_ACTIVE_STARTTIME").text(_active.startTime);
