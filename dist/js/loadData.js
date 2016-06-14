@@ -17,6 +17,7 @@ function loadData(id){
 				alert(JSON.stringify(data));
                 if(data.code==8003&&YJSay.is_weiXin()){
 					localStorage.setItem("locationHref",location.hash);
+					alert(localStorage.getItem("locationHref"));
                     location.href="login.html";
 					return;
                 }
