@@ -34,9 +34,69 @@
     </button>
 	<script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
 	<script>
+	$(function(){
+		var baseUrl = 'http://src.yjsvip.com/',  //接口地址
+			orgUrl = '',  //登录成功跳转相应业务逻辑地址
+			//referrer = document.referrer,
+			weChartToken = localStorage.getItem('weChartToken');
+
+		//if(referrer.indexOf('wexin')===-1){
+		//    localStorage.setItem('referrer',referrer);
+		//}
+		alert(weChartToken);
+		if(weChartToken){
+			console.log('login success');
+			//_bind(weChartToken);
+		}else{
+			$.ajax({
+				url: baseUrl+'yjsWebService/weixin/user/getToken?callback=?', 
+				dataType: 'jsonp',
+				success: function(data){
+					console.log(data);
+					var _weChartToken = data.token;
+					if(_weChartToken){
+						localStorage.setItem('weChartToken',_weChartToken);
+					}else{
+						$.ajax({
+							url: baseUrl+'yjsWebService/weixin/user/saveUrl?callback=?', 
+							dataType: 'jsonp',
+							data:{'url':location.href},
+							success: function(data){
+								var url = data.url;
+								if(url){
+									location.href = data.url;
+								}
+							}
+						})
+					}
+				}
+			})
+		}
 		$(".phoneSearch-button").on("click",function(){
-			alert($("#saleTel").val());
+			_search(localStorage.getItem('weChartToken'),$("#saleTel").val());
 		});
+		function _search(token,tel){
+			$.ajax({
+				url: baseUrl+'/yjsWebService/weixin/user/searchMySaleInfoByTel?callback=?', 
+				dataType: 'jsonp',
+				data:{'token': token, 'tel':tel},
+				success: function(data){
+				alert(JSON.stringify(data));
+					var code = data.code;
+					if(code==='200'){
+						// location.href = data.url;
+						//location.href = localStorage.getItem('referrer');
+					}else if(code==='8003'){
+						alert('账号错误');
+					}else if(code==='8004'){
+						alert('密码错误');
+					}else{
+						alert('未知错误');
+					}
+				}
+			})
+		}
+	})
 	</script>
 </body>
 </html>
