@@ -474,6 +474,7 @@ function loadData(id){
             }
         });
     }else if(id=="#YJ_tuiGuangJiangLi"&&$("#YJ_tuiGuangJiangLi").attr("data-from")=="home-active"){
+		alert("进入活动推广奖励");
         if(!test) {
             YJSay.setTitle("推广奖励");
         }
@@ -603,6 +604,7 @@ function loadData(id){
             }
         });
     }else if(id=="#YJ_tuiGuangJiangLi"&&$("#YJ_tuiGuangJiangLi").attr("data-from")=="home-loushu"){
+		alert("进入楼书推广奖励");
         if(!test) {
             YJSay.setTitle("推广奖励");
         }
@@ -688,6 +690,7 @@ function loadData(id){
             }
         });
     }else if(id=="#YJ_tuiGuangJiangLi"&&$("#YJ_tuiGuangJiangLi").attr("data-from")=="home-haibao"){
+		alert("进入海报推广奖励");
         if(!test) {
             YJSay.setTitle("推广奖励");
         }
