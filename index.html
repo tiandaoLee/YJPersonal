@@ -1146,13 +1146,12 @@
 						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
-
-                        var height = $(window).height();
+                        changePage("YJ_activeContent");
+						var height = $(window).height();
                         var bottomHeight = $(".navbar-absolute-bottom").height();
 						alert(bottomHeight);
-                        $("#YJ_ACTIVE_COVER").css({height:height-60+"px"})
+                        $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
                                 .html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getBuildId()+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
-                        changePage("YJ_activeContent");
                     }
                 });
             }
