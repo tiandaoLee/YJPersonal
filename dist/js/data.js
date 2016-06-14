@@ -92,6 +92,17 @@ var YJSay = (function ($) {
                 });
             }
         },
+        changeToLocalSecurity: function (securityKey) {
+            var _self = this;
+            _self.getData({
+                url:"/yjsWebService/web/security/checkMySecurity",
+                data:{token:_self.getToken(),securityKey:securityKey},
+                async:false,
+                success: function (data) {
+                    _self.setSecurityKey(data.securityKey);
+                }
+            });
+        },
         is_weiXin:function(){
             var ua = navigator.userAgent.toLowerCase();
             return ua.match(/MicroMessenger/i)=="micromessenger";

@@ -888,7 +888,7 @@
     function route(){
         var id = location.hash;
         $(".page-active").removeClass("page-active");
-        if(id.split("?")[0]){
+        if(id.split("?")[0]||(id.indexOf("YJ_activeContent")!=-1&&id.split("?").length==1)){
             $(id.split("?")[0]).addClass("page-active");
         }
         if(id.indexOf("YJ_louPanDetail")!=-1){
@@ -897,8 +897,47 @@
             }
             $("#YJ_louPanDetail").find(".tab").eq(0).trigger("click");
         }
-		loadData(id.split("?")[0]);
-
+        if(id.indexOf("YJ_activeContent")!=-1&&id.split("?").length!=1){
+            alert("活动内容");
+            var _id = YJSay.getUrlParamValue(id,"activeId");
+            var _from = YJSay.getUrlParamValue(id,"from");
+            var _type = YJSay.getUrlParamValue(id,"type");
+            var _securityKey = YJSay.getUrlParamValue(id,"securityKey");
+            alert(_id+" "+_from+" "+_type+" "+_securityKey);
+            $("#YJ_activeContent").attr("data-activeId",_id)
+                    .attr("data-from",_from)
+                    .attr("data-type",_type)
+                    .find(".dz").removeClass("hidden");
+            var _token = YJSay.getToken();
+            alert(_token);
+            YJSay.changeToLocalSecurity(_securityKey);
+            YJSay.getData({
+                url:"/yjsWebService/point/getHunheViewPoint",
+                async:false,
+                data:{token:_token,sourceId:_id,securityKey:YJSay.getSecurityKey()},
+                success: function (data) {
+                    alert(JSON.stringify(data));
+                    YJSay.setSecurityKey(data.pointInfo.securityKey);
+                    YJSay.getData({
+                        url:"/yjsWebService/point/checkActivePlayInfo",
+                        data:{token:YJSay.getToken(),activeType:5,id:id},
+                        success: function (data) {
+                            alert(JSON.stringify(data));
+                            hasDianzan = data.playInfo.dianzanPlay;
+                            hasGuanzhu = data.playInfo.guanzhuPlay;
+                            var dz = $("#YJ_activeContent").find(".dz i");
+                            hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
+                            var height = document.body.clientHeight;
+                            var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
+                            $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+                                    .html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getBuildId()+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+                            $(id.split("?")[0]).addClass("page-active");
+                        }
+                    });
+                }
+            });
+        }
+        loadData(id.split("?")[0]);
     }
     function changePage(id){
         location.hash = id;
@@ -1234,13 +1273,17 @@
         var from = $("#YJ_activeContent").attr("data-from");
         var buildId = $("#YJ_louPanDetail").attr("data-loupanid");
         var activeId = $("#YJ_activeContent").attr("data-activeId");
+        var type = $("#YJ_activeContent").attr("data-type");
         if(from=="home-active"||from=="tuiguang-active") {
-            YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/diy/"+buildId+"/"+activeId+"/1.html?5&&"+activeId);
+            YJSay.checkSecurityKey("5",activeId);
+            YJSay.transmit("?5&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-haibao"||from=="tuiguang-haibao"){
             YJSay.checkSecurityKey("3",activeId);
             YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?3&&"+activeId+"&&"+encodeURIComponent("http://10.0.0.120/web/YJPersonal/#YJ_louPanDetail?buildId="+buildId+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-loushu"||from=="tuiguang-loushu"){
-            YJSay.transmit(path+"?1&&"+activeId);
+            YJSay.checkSecurityKey("1",activeId);
+            YJSay.transmit("?1&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
+            //YJSay.transmit(path+"?1&&"+activeId);
         }
     });
     $("#YJ_promotionAward").on("click", function () {
