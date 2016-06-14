@@ -912,7 +912,7 @@
             var _token = YJSay.getToken();
             alert(_token);
             YJSay.changeToLocalSecurity(_securityKey);
-			if(type=="baoming"||type=="hongbao"){
+			if(_type=="baoming"||_type=="hongbao"){
 				YJSay.getData({
 					url:"/yjsWebService/point/getHunheViewPoint",
 					async:false,
@@ -938,7 +938,7 @@
 						});
 					}
 				});
-			}else if(type=="haibao"){
+			}else if(_type=="haibao"){
 				YJSay.getData({
 					url:"/yjsWebService/point/checkActivePlayInfo",
 					data:{token:YJSay.getToken(),activeType:3,id:_id},
@@ -953,7 +953,7 @@
 						$(id.split("?")[0]).addClass("page-active");
 					}
 				});
-			}else if(type=="loushu"){
+			}else if(_type=="loushu"){
 				YJSay.getData({
 					url:"/yjsWebService/point/getLoushuViewPoint",
 					data:{token:YJSay.getToken(),sourceId:_id,securityKey:YJSay.getSecurityKey()},
