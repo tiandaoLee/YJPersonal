@@ -7,9 +7,9 @@ function loadData(id){
     if(id===""||id=="#YJ_HOME"){
         if(!test){
             YJSay.hideBottom(false);
+			YJSay.setTitle("1家说");
             //YJSay.hideTop(false);
         }
-        YJSay.setTitle("1家说");
         YJSay.getData({
             url:"/yjsWebService/index/getMyIndex",
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
@@ -90,8 +90,8 @@ function loadData(id){
         if(!test){
             YJSay.hideBottom(true);
             //YJSay.hideTop(true);
+			YJSay.setTitle("楼盘详情");
         }
-        YJSay.setTitle("楼盘详情");
         YJSay.getData({
             url:"/yjsWebService/build/getBuildInfoDetail",
             data:{token:YJSay.getToken(),buildId:getBuildId()},

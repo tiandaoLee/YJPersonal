@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>1家说</title>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -886,6 +886,9 @@
         }
     }
     function route(){
+		if(YJSay.is_weiXin()){
+			$(".fz").addClass("hidden");
+		}
         var id = location.hash;
         $(".page-active").removeClass("page-active");
         if(id.split("?")[0]||(id.indexOf("YJ_activeContent")!=-1&&id.split("?").length==1)){
@@ -980,20 +983,16 @@
 								$('#testIframe').on('load', function(){
 									console.log("加载了");
 									var phoneScale = 1;
-									//phoneWidth = parseInt(window.screen.width);
 									phoneWidth = $(window).width();
 									phoneScale = phoneWidth/640;
 
 									var dom=$('body',parent.document).find('#testIframe').contents().find('#coolapp').find('.wrap');
-									//var dom=$('body',parent.document).find('#testIframe');
-									//var dom=$('body',parent.document).find('#testIframe').contents().find('body');
 									dom.css({
 										'transform': 'scale('+phoneScale+','+phoneScale+')',
 										'transform-origin':'left top',
 										'height': '300%',
 										'width': '300%'
 									});
-									//dom.find('#coolapp').find('.wrap').width('300%');
 								});
 							}
 						});
