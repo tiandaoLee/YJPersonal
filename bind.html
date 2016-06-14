@@ -48,7 +48,7 @@ $(function(){
 	alert(weChartToken);
     if(weChartToken){
         console.log('login success');
-        _bind(weChartToken);
+        //_bind(weChartToken);
     }else{
         $.ajax({
             url: baseUrl+'yjsWebService/weixin/user/getToken?callback=?', 
@@ -57,7 +57,7 @@ $(function(){
                 console.log(data);
                 var _weChartToken = data.token;
                 if(_weChartToken){
-                    _bind(_weChartToken);
+                    //_bind(_weChartToken);
                     localStorage.setItem('weChartToken',_weChartToken);
                 }else{
                     $.ajax({
@@ -75,7 +75,9 @@ $(function(){
             }
         })
     }
-
+	$("#loginButton").on("click",function(){
+		_bind(localStorage.getItem('weChartToken'));
+	});
     function _bind(token){
         $.ajax({
             url: baseUrl+'/yjsWebService/weixin/pubNum/toBangAccount?callback=?', 
