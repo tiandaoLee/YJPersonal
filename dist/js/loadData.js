@@ -14,6 +14,7 @@ function loadData(id){
             url:"/yjsWebService/index/getMyIndex",
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
             success: function (data) {
+				localStorage.removeItem("weChartToken");
 				alert(JSON.stringify(data));
                 if(data.code==8003&&YJSay.is_weiXin()){
 					localStorage.setItem("locationHref",location.hash);
