@@ -61,7 +61,6 @@ var YJSay = (function ($) {
                             token = localStorage.getItem('weChartToken');
                         }else{
 							localStorage.setItem("locationHref",location.hash);
-							alert(localStorage.getItem("locationHref"));
                             location.href="login.html";
                         }
                     }else{
