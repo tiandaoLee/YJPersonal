@@ -30,9 +30,9 @@ var YJSay = (function ($) {
             });
         },
         goBack: function () {
-            //if($(".mask").is(":visible")){
-            //    $(".mask").addClass('hidden');
-            //}
+            if($(".mask").is(":visible")){
+                $(".mask").addClass('hidden');
+            }
 			history.back();
 			//if($("iframe").attr("src")){
 			//	$("iframe").attr("src","").html("");
