@@ -901,6 +901,7 @@
             alert("活动内容");
 			alert(id);
             var _id = YJSay.getUrlParamValue(id,"activeId");
+			var _buildId = YJSay.getUrlParamValue(id,"buildId");
             var _from = YJSay.getUrlParamValue(id,"from");
             var _type = YJSay.getUrlParamValue(id,"type");
             var _securityKey = YJSay.getUrlParamValue(id,"securityKey");
@@ -932,7 +933,7 @@
 								var height = document.body.clientHeight;
 								var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
 								$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-										.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getBuildId()+'/'+_id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+										.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+_buildId+'/'+_id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
 								$(id.split("?")[0]).addClass("page-active");
 							}
 						});
@@ -949,7 +950,7 @@
 						var height = document.body.clientHeight;
 						var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
 						$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-								.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+getBuildId()+'/'+_id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+								.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+_buildId+'/'+_id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
 						$(id.split("?")[0]).addClass("page-active");
 					}
 				});
@@ -1321,13 +1322,13 @@
         var type = $("#YJ_activeContent").attr("data-type");
         if(from=="home-active"||from=="tuiguang-active") {
             YJSay.checkSecurityKey("5",activeId);
-            YJSay.transmit("?5&&"+buildId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
+            YJSay.transmit("?5&&"+buildId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&buildId="+buildId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-haibao"||from=="tuiguang-haibao"){
             YJSay.checkSecurityKey("3",activeId);
             YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?3&&"+activeId+"&&"+encodeURIComponent(YJSay.baseUrl +"/img/YJPersonal/#YJ_louPanDetail?buildId="+buildId+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-loushu"||from=="tuiguang-loushu"){
             YJSay.checkSecurityKey("1",activeId);
-            YJSay.transmit("?1&&"+buildId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
+            YJSay.transmit("?1&&"+buildId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&buildId="+buildId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
             //YJSay.transmit(path+"?1&&"+activeId);
         }
     });
