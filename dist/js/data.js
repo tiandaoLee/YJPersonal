@@ -30,14 +30,13 @@ var YJSay = (function ($) {
             });
         },
         goBack: function () {
-            if($(".mask").is(":visible")){
-                $(".mask").addClass('hidden');
-            }
-			history.go(-1);
-			alert(location.hash);
-			if($("iframe").attr("src")){
-				$("iframe").attr("src","").html("");
-			}
+            //if($(".mask").is(":visible")){
+            //    $(".mask").addClass('hidden');
+            //}
+			history.back();
+			//if($("iframe").attr("src")){
+			//	$("iframe").attr("src","").html("");
+			//}
         },
         setTitle: function (title) {
             this.useNativeFunction("setTitle",title);
