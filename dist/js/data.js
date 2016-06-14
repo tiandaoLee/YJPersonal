@@ -34,8 +34,8 @@ var YJSay = (function ($) {
                 $(".mask").addClass('hidden');
             }
 			history.back();
-			if($("iframe").attr("src")){
-				$("iframe").html("");
+			if($("iframe").length){
+				$("iframe").remove(); 
 			}
         },
         setTitle: function (title) {
