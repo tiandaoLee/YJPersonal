@@ -75,7 +75,7 @@ $(function(){
             }
         })
     }
-	$("#loginButton").on("click",function(){
+	$(".loginButton").on("click",function(){
 		_bind(localStorage.getItem('weChartToken'));
 	});
     function _bind(token){
@@ -84,10 +84,11 @@ $(function(){
             dataType: 'jsonp',
             data:{'token': token, 'username':$('#username').val(), 'password':$('#password').val()},
             success: function(data){
+			alert(JSON.stringify(data));
                 var code = data.code;
                 if(code==='200'){
                     // location.href = data.url;
-                    location.href = localStorage.getItem('referrer');
+                    //location.href = localStorage.getItem('referrer');
                 }else if(code==='8003'){
                     alert('账号错误');
                 }else if(code==='8004'){
