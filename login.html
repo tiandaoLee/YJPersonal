@@ -19,7 +19,7 @@
             orgUrl = ''  //登录成功跳转相应业务逻辑地址
 			if(document.referrer){
 				alert(document.referrer);
-				localStorage.setItem(document.referrer);
+				localStorage.setItem("referrer",document.referrer);
 			}
             //weChartToken = localStorage.getItem('weChartToken');
         //if(weChartToken){
