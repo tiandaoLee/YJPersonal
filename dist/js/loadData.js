@@ -16,7 +16,7 @@ function loadData(id){
             success: function (data) {
 				alert(JSON.stringify(data));
 				if(YJSay.is_weiXin()){
-					localStorage.clearItem("referrer");
+					localStorage.removeItem("referrer");
 				}
                 if(data.code==8003&&YJSay.is_weiXin()){
                     location.href="login.html";
