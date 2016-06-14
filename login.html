@@ -35,7 +35,7 @@
                     if(_weChartToken){
                         localStorage.setItem('weChartToken',_weChartToken);
 						if(localStorage.getItem("referrer")){
-							alert(localStorage.getItem("referrer")+localStorage.getItem("locationHref"));
+							alert(localStorage.getItem("locationHref"));
 							location.href=localStorage.getItem("referrer")+localStorage.getItem("locationHref");
 						}
                     }else{
