@@ -16,6 +16,7 @@ function loadData(id){
             success: function (data) {
 				alert(JSON.stringify(data));
                 if(data.code==8003&&YJSay.is_weiXin()){
+					localStorage.setItem("locationHref",location.hash);
                     location.href="login.html";
 					return;
                 }
@@ -96,6 +97,7 @@ function loadData(id){
             data:{token:YJSay.getToken(),buildId:getBuildId()},
             success: function (data) {
                 if(data.code==8003&&YJSay.is_weiXin()){
+					localStorage.setItem("locationHref",location.hash);
                     location.href="login.html";
                     return;
                 }
