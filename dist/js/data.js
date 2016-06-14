@@ -92,13 +92,14 @@ var YJSay = (function ($) {
                 });
             }
         },
-        changeToLocalSecurity: function (securityKey) {
+        changeToLocalSecurity: function (security) {
             var _self = this;
             _self.getData({
                 url:"/yjsWebService/web/security/checkMySecurity",
-                data:{token:_self.getToken(),securityKey:securityKey},
+                data:{token:_self.getToken(),securityKey:security},
                 async:false,
                 success: function (data) {
+					alert("转成本地key:"+JSON.stringify(data));
                     _self.setSecurityKey(data.securityKey);
                 }
             });
