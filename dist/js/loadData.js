@@ -1084,12 +1084,12 @@ function loadData(id){
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
             success: function (data) {
                 console.log(data);
-                if(data.orderNum&&!YJSay.isEmptyObject(data.orderNum)){
+                if(data.orderNum!=undefined){
                     $("#YJ_YIJI_ORDER_NUMBER").text(data.orderNum);
                 }else{
                     $("#YJ_YIJI_ORDER_NUMBER").text("--");
                 }
-                if(data.point&&!YJSay.isEmptyObject(data.point)){
+                if(data.point!=undefined){
                     $("#YJ_YIJI_ORDER_MONEY").text(YJSay.changeToMoney(data.point));
                 }else{
                     $("#YJ_YIJI_ORDER_MONEY").text("--元");
@@ -1157,12 +1157,12 @@ function loadData(id){
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99,accountId:$("#YJ_USER_ACCORD").text(),buildId:$("#YJ_chengJiao").attr("data-buildid")},
             success: function (data) {
                 console.log(data);
-                if(data.orderNum&&!YJSay.isEmptyObject(data.orderNum)){
+                if(data.orderNum!=undefined){
                     $("#YJ_ERJI_ORDER_NUMBER").text(data.orderNum);
                 }else{
                     $("#YJ_ERJI_ORDER_NUMBER").text("--");
                 }
-                if(data.point&&!YJSay.isEmptyObject(data.point)){
+                if(data.point!=undefined){
                     $("#YJ_ERJI_ORDER_MONEY").text(YJSay.changeToMoney(data.point));
                 }else{
                     $("#YJ_ERJI_ORDER_MONEY").text("--元");
@@ -1230,12 +1230,12 @@ function loadData(id){
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99,accountId:$("#YJ_USER_ACCORD").text(),buildId:$("#YJ_chengJiao").attr("data-buildid")},
             success: function (data) {
                 console.log(data);
-                if(data.orderNum&&!YJSay.isEmptyObject(data.orderNum)){
+                if(data.orderNum!=undefined){
                     $("#YJ_SANJI_ORDER_NUMBER").text(data.orderNum);
                 }else{
                     $("#YJ_SANJI_ORDER_NUMBER").text("--");
                 }
-                if(data.point&&!YJSay.isEmptyObject(data.point)){
+                if(data.point!=undefined){
                     $("#YJ_SANJI_ORDER_MONEY").text(YJSay.changeToMoney(data.point));
                 }else{
                     $("#YJ_SANJI_ORDER_MONEY").text("--元");
