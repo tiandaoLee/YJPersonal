@@ -15,6 +15,9 @@ function loadData(id){
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
             success: function (data) {
 				alert(JSON.stringify(data));
+				if(YJSay.is_weiXin()){
+					localStorage.clearItem("referrer");
+				}
                 if(data.code==8003&&YJSay.is_weiXin()){
                     location.href="login.html";
 					return;
