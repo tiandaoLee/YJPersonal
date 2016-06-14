@@ -34,9 +34,9 @@ var YJSay = (function ($) {
                 $(".mask").addClass('hidden');
             }
 			history.back();
-			//if($("iframe").attr("src")){
-			//	$("iframe").attr("src","").html("");
-			//}
+			if($("iframe").attr("src")){
+				$("iframe").attr("src","").html("");
+			}
         },
         setTitle: function (title) {
             this.useNativeFunction("setTitle",title);
