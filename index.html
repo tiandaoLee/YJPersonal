@@ -885,17 +885,22 @@
     function route(){
         var id = location.hash;
         $(".page-active").removeClass("page-active");
-        if(id.split("?")[0]){
+        if(id.split("?")[0]&&id){
             $(id.split("?")[0]).addClass("page-active");
-			alert($(id.split("?")[0]).length);
-        }
+        }else{
+			$("#YJ_HOME").addClass("page-active");
+		}
         if(id.indexOf("YJ_louPanDetail")!=-1){
             if(id.split("?").length!=1){
                 myBuildId = YJSay.getUrlParamValue(id,"buildId");
             }
             $("#YJ_louPanDetail").find(".tab").eq(0).trigger("click");
         }
-        loadData(id.split("?")[0]);
+		if(id){
+			loadData(id.split("?")[0]);
+		}else{
+			loadData("#YJ_HOME");
+		}
     }
     function changePage(id){
         location.hash = id;
