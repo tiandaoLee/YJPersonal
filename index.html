@@ -287,7 +287,7 @@
             <a class="btn-navbar" data-src="baseInfo"><i class="fa fa-info fa-navbar"></i> 基本信息</a>
             <a class="btn-navbar" data-src="myParticipation"><i class="fa fa-share-square-o fa-navbar"></i> 我的参与</a>
             <a class="btn-navbar zf"><i class="fa fa-share fa-navbar"></i> 转发</a>
-            <a class="btn-navbar gz"><i class="fa fa-info fa-navbar"></i> 关注楼盘</a>
+            <a class="btn-navbar gz hidden"><i class="fa fa-info fa-navbar"></i> 关注楼盘</a>
             <a class="btn-navbar dz"><i class="fa fa-thumbs-o-up fa-navbar"></i> 点赞</a>
         </div>
         <!-- 模态框（Modal） -->
@@ -933,6 +933,8 @@
 								hasDianzan = data.playInfo.dianzanPlay;
 								hasGuanzhu = data.playInfo.guanzhuPlay;
 								var dz = $("#YJ_activeContent").find(".dz i");
+								var gz = $("#YJ_activeContent").find(".gz");
+								hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
 								hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
 								var height = document.body.clientHeight;
 								var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
@@ -951,6 +953,8 @@
 					success: function (data) {
 						alert(JSON.stringify(data));
 						hasGuanzhu = data.playInfo.guanzhuPlay;
+						var gz = $("#YJ_activeContent").find(".gz");
+						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
 						changePage("YJ_activeContent");
 						var height = document.body.clientHeight;
 						var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
@@ -972,9 +976,10 @@
 								alert(JSON.stringify(data));
 								hasDianzan = data.playInfo.dianzanPlay;
 								hasGuanzhu = data.playInfo.guanzhuPlay;
+								var gz = $("#YJ_activeContent").find(".gz");
+								hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
 								var dz = $("#YJ_activeContent").find(".dz i");
 								hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
-
 								var height = document.body.clientHeight;
 								var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
 								$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
@@ -1137,6 +1142,8 @@
                         alert(JSON.stringify(data));
                         hasDianzan = data.playInfo.dianzanPlay;
                         hasGuanzhu = data.playInfo.guanzhuPlay;
+						var gz = $("#YJ_activeContent").find(".gz");
+						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
 
@@ -1172,6 +1179,8 @@
             success: function (data) {
                 alert(JSON.stringify(data));
                 hasGuanzhu = data.playInfo.guanzhuPlay;
+				var gz = $("#YJ_activeContent").find(".gz");
+				hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                 changePage("YJ_activeContent");
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
@@ -1210,6 +1219,8 @@
                         alert(JSON.stringify(data));
                         hasDianzan = data.playInfo.dianzanPlay;
                         hasGuanzhu = data.playInfo.guanzhuPlay;
+						var gz = $("#YJ_activeContent").find(".gz");
+						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
 
@@ -1426,6 +1437,8 @@
                         alert(JSON.stringify(data));
                         hasDianzan = data.playInfo.dianzanPlay;
                         hasGuanzhu = data.playInfo.guanzhuPlay;
+						var gz = $("#YJ_activeContent").find(".gz");
+						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
                         changePage("YJ_activeContent");
@@ -1459,8 +1472,11 @@
             data:{token:YJSay.getToken(),activeType:3,id:id},
             success: function (data) {
                 alert(JSON.stringify(data));
+				hasGuanzhu = data.playInfo.guanzhuPlay;
+				var gz = $("#YJ_activeContent").find(".gz");
+				hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                 changePage("YJ_activeContent");
-                hasGuanzhu = data.playInfo.guanzhuPlay;
+                
                 var height = document.body.clientHeight;
                 var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
                 $("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
@@ -1496,6 +1512,8 @@
                         alert(JSON.stringify(data));
                         hasDianzan = data.playInfo.dianzanPlay;
                         hasGuanzhu = data.playInfo.guanzhuPlay;
+						var gz = $("#YJ_activeContent").find(".gz");
+						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                         var dz = $("#YJ_activeContent").find(".dz i");
                         hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
                         changePage("YJ_activeContent");
@@ -1538,6 +1556,8 @@
                             alert(JSON.stringify(data));
                             hasDianzan = data.playInfo.dianzanPlay;
                             hasGuanzhu = data.playInfo.guanzhuPlay;
+							var gz = $("#YJ_activeContent").find(".gz");
+							hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                             var dz = $("#YJ_activeContent").find(".dz i");
                             hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
                             changePage("YJ_activeContent");
@@ -1557,6 +1577,8 @@
                 success: function (data) {
                     alert(JSON.stringify(data));
                     hasGuanzhu = data.playInfo.guanzhuPlay;
+					var gz = $("#YJ_activeContent").find(".gz");
+					hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                     changePage("YJ_activeContent");
                     var height = document.body.clientHeight;
                     var bottomHeight = $(".navbar-absolute-bottom")[0].clientHeight;
@@ -1579,6 +1601,8 @@
                             alert(JSON.stringify(data));
                             hasDianzan = data.playInfo.dianzanPlay;
                             hasGuanzhu = data.playInfo.guanzhuPlay;
+							var gz = $("#YJ_activeContent").find(".gz");
+							hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
                             var dz = $("#YJ_activeContent").find(".dz i");
                             hasDianzan?dz.addClass("fa-thumbs-up"):dz.removeClass("fa-thumbs-up");
                             changePage("YJ_activeContent");
