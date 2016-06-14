@@ -887,6 +887,7 @@
         $(".page-active").removeClass("page-active");
         if(id.split("?")[0]){
             $(id.split("?")[0]).addClass("page-active");
+			alert($(id.split("?")[0]).length);
         }
         if(id.indexOf("YJ_louPanDetail")!=-1){
             if(id.split("?").length!=1){
