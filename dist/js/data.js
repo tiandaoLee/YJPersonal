@@ -99,7 +99,6 @@ var YJSay = (function ($) {
                 data:{token:_self.getToken(),securityKey:security},
                 async:false,
                 success: function (data) {
-					alert("转成本地key:"+JSON.stringify(data));
                     _self.setSecurityKey(data.securityKey);
                 }
             });

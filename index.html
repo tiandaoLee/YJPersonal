@@ -917,7 +917,7 @@
                 async:false,
                 data:{token:_token,sourceId:_id,securityKey:YJSay.getSecurityKey()},
                 success: function (data) {
-                    alert(JSON.stringify(data));
+                    alert("本地数据："+JSON.stringify(data));
                     YJSay.setSecurityKey(data.pointInfo.securityKey);
                     YJSay.getData({
                         url:"/yjsWebService/point/checkActivePlayInfo",
