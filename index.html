@@ -1276,13 +1276,13 @@
         var type = $("#YJ_activeContent").attr("data-type");
         if(from=="home-active"||from=="tuiguang-active") {
             YJSay.checkSecurityKey("5",activeId);
-            YJSay.transmit("?5&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
+            YJSay.transmit("?5"+buildId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-haibao"||from=="tuiguang-haibao"){
             YJSay.checkSecurityKey("3",activeId);
             YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?3&&"+activeId+"&&"+encodeURIComponent("http://10.0.0.120/web/YJPersonal/#YJ_louPanDetail?buildId="+buildId+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-loushu"||from=="tuiguang-loushu"){
             YJSay.checkSecurityKey("1",activeId);
-            YJSay.transmit("?1&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
+            YJSay.transmit("?1"+buildId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
             //YJSay.transmit(path+"?1&&"+activeId);
         }
     });
