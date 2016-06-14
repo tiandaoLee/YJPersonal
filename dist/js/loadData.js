@@ -1097,7 +1097,7 @@ function loadData(id){
                 var _list = data.list;
                 var _html="";
                 $.each(_list, function () {
-                    _html+="<tr id="+this.id+" data-buildId="+this.buildId+" data-img="+this.imageUrlDisplay+"><td>"+this.accountId+"</td><td>"+this.name+"</td><td>"+this.endDate+"</td></tr>";
+                    _html+="<tr id="+this.accountId+" data-buildId="+this.buildId+" data-img="+this.imageUrlDisplay+"><td>"+this.accountId+"</td><td>"+this.name+"</td><td>"+this.endDate+"</td></tr>";
                 });
                 $("#yijiList").find("tbody").html(_html);
             }
@@ -1170,7 +1170,7 @@ function loadData(id){
                 var _list = data.list;
                 var _html="";
                 $.each(_list, function () {
-                    _html+="<tr id="+this.id+" data-buildId="+this.buildId+" data-img="+this.imageUrlDisplay+"><td>"+this.accountId+"</td><td>"+this.name+"</td><td>"+this.endDate+"</td></tr>";
+                    _html+="<tr id="+this.accountId+" data-buildId="+this.buildId+" data-img="+this.imageUrlDisplay+"><td>"+this.accountId+"</td><td>"+this.name+"</td><td>"+this.endDate+"</td></tr>";
                 });
                 $("#erjiList").find("tbody").html(_html);
             }
@@ -1243,7 +1243,7 @@ function loadData(id){
                 var _list = data.list;
                 var _html="";
                 $.each(_list, function () {
-                    _html+="<tr id="+this.id+" data-buildId="+this.buildId+" data-img="+this.imageUrlDisplay+"><td>"+this.accountId+"</td><td>"+this.name+"</td><td>"+this.endDate+"</td></tr>";
+                    _html+="<tr id="+this.accountId+" data-buildId="+this.buildId+" data-img="+this.imageUrlDisplay+"><td>"+this.accountId+"</td><td>"+this.name+"</td><td>"+this.endDate+"</td></tr>";
                 });
                 $("#sanjiList").find("tbody").html(_html);
             }
