@@ -37,7 +37,6 @@ var YJSay = (function ($) {
 			if($("iframe").attr("src")){
 				$("iframe").attr("src","").html("");
 			}
-            
         },
         setTitle: function (title) {
             if(this.is_weiXin()){

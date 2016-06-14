@@ -30,6 +30,7 @@
                 url: baseUrl+'yjsWebService/weixin/user/getToken?callback=?', 
                 dataType: 'jsonp',
                 success: function(data){
+					alert(JSON.stringify(data));
                     var _weChartToken = data.token;
                     if(_weChartToken){
                         localStorage.setItem('weChartToken',_weChartToken);
