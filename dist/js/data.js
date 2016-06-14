@@ -34,6 +34,7 @@ var YJSay = (function ($) {
                 $(".mask").addClass('hidden');
             }
 			history.go(-1);
+			alert(location.hash);
 			if($("iframe").attr("src")){
 				$("iframe").attr("src","").html("");
 			}
