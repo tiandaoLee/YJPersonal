@@ -869,7 +869,7 @@
 <script>
     $(function(){
         new FastClick(document.body);
-		alert(!localStorage.getItem("wLocation"));
+		alert((new Date().getTime()-parseInt(localStorage.getItem("wLocationTime")))/(24*3600000)>=1);
 		if(YJSay.is_weiXin()
 			&&
 			(
