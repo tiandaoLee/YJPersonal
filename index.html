@@ -896,7 +896,7 @@
 		if(YJSay.is_weiXin()){
 			YJSay.getData({
 				url:"/yjsWebService/weixin/config/postUserLocation",
-				data:{address:-1,cityCode:"",longitude:"",latitude:""},
+				data:{token:YJSay.getToken(),address:-1,cityCode:"",longitude:"",latitude:""},
 				success:function(data){
 				alert(JSON.stringify(data));
 					if(data.code==200){
