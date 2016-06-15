@@ -74,7 +74,7 @@
             <span class="formal-font color3232 right" id="buildIntro">--</span>
         </div>
     </div>
-    <button class="phoneSearch-button hidden">
+    <button class="phoneSearch-button">
         点击关注
     </button>
 
@@ -83,12 +83,17 @@
     </button>
 	<script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
 	<script>
+		var baseUrl = 'http://src.yjsvip.com/',  //接口地址
+		orgUrl = '',  //登录成功跳转相应业务逻辑地址
+		//referrer = document.referrer,
+		weChartToken = localStorage.getItem('weChartToken');
 		alert(localStorage.getItem("salerLouPan"));
 		var data = localStorage.getItem("salerLouPan");
-		if(data){
+		var buildId;
 			data = JSON.parse(data);
 			alert(data.saleUserAccountId);
 			var _buildInfo = data.buildInfo;
+			buildId = data.id;
 			if(_buildInfo){
 				$("#saleName").text(data.saleName);
 				$("#saleTel").text(_buildInfo.tel);
@@ -97,6 +102,16 @@
 				$("#buildIntro").html(_buildInfo.des);
 			}
 		}
+		$("#gz").on("click",function(){
+			$.ajax({
+				url:baseUrl+"yjsWebService/build/subscribeBuild",
+				dataType: 'jsonp',
+                data:{'token': localStorage.getItem('weChartToken'), 'buildId':buildId},
+                success: function(data){
+					alert(JSON.stringify(data));
+				}
+			});
+		});
 	</script>
 </body>
 </html>
