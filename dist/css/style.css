@@ -653,3 +653,7 @@ header ul li p{
 .intro{
 	padding-right:1.2rem;
 }
+.hasNoBuild{
+    text-align: center;
+    padding-top: 100px;
+}
