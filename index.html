@@ -1480,13 +1480,11 @@
     $("#YJ_MYTUIGUANG_HAIBAO").on("click",".listImg", function () {
         var id=$(this).attr("id");
         myTuiBuildId = $(this).closest(".imgBox").attr("id");
-		alert(myTuiBuildId);
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("海报名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-haibao")
                 .attr("data-type",$(this).attr("data-type"))
                 .find(".dz").addClass("hidden");
-		alert("点击了海报");
         YJSay.getData({
             url:"/yjsWebService/point/checkActivePlayInfo",
             data:{token:YJSay.getToken(),activeType:3,id:id},
@@ -1579,6 +1577,7 @@
             });
         }else if(type=="hiabao"){
             $("#YJ_activeContent").find(".dz").addClass("hidden");
+			alert("点了海报");
             YJSay.getData({
                 url:"/yjsWebService/point/checkActivePlayInfo",
                 data:{token:YJSay.getToken(),activeType:3,id:id},
