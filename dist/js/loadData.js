@@ -1434,7 +1434,7 @@ function loadData(id){
                             '</div></li>';
                     }else{
                         _html+='<li class="'+(index?"top10":"")+'"><div class="imgBox" id='+this.buildId+'>'+
-                            '<img class="listImg" src='+this.coverPictureDisplay+' id="'+this.id+'" data-path='+(this.type==1?this.path:"")+' data-type='+(this.type==1?"loushu":"haibao")+'>'+
+                            '<img class="listImg" src='+this.coverPictureDisplay+' id="'+this.id+'" data-path="'+(this.type==1?this.path:"")+'" data-type='+(this.type==1?"loushu":"haibao")+'>'+
                             '<div class="round-button round-button1">'+(this.type==1?"<img src="+this.qrCode+">":"<div class='qrcode' data-src="+this.qrCode+"></div>")+'</div>'+
                             '<div class="round-button round-button2"><img src="dist/img/1jiabi_03.png"></div>'+
                             '<div class="box-big boxPadding">'+
