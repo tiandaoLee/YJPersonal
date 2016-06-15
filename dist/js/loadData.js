@@ -33,6 +33,7 @@ function loadData(id){
                     var _buildList = data.buildList;
                     console.log(_buildList);
                     var _html="";
+					_buildList = [];
                     $.each(_buildList, function (index,ele) {
                         var sale = {saleUserAccountId:this.saleUserAccountId,tel:this.tel,saleName:this.saleName,saleImage:this.saleImage};
                         var buildName = this.buildName;
@@ -80,6 +81,7 @@ function loadData(id){
                             '</li>';
                     });
                     $("#YJ_louPanList").html(_html);
+                    _html?$("#YJ_hasNoBuild").addClass("hidden"):$("#YJ_hasNoBuild").removeClass("hidden");
                     $.each($(".loupanItem"), function () {
                         $(this).find(".erweima").qrcode({width:30,height:30,text: YJSay.utf16to8($(this).find(".erweimaWrap").attr("data-src"))});
                     });
