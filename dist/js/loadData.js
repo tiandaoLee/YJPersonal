@@ -1033,7 +1033,7 @@ function loadData(id){
                 $.each(data.list, function (index,ele) {
                     console.log(index);
                     _html+='<div class="imgBox '+(index?"top10":"")+'" id='+this.buildId+'>'+
-                        '<img class="listImg" src='+this.coverPicture+' id="'+this.id+'"  data-type="loushu">'+
+                        '<img class="listImg" src='+this.coverPicture+' id="'+this.id+'" data-path='+this.path+'  data-type="loushu">'+
                         '<div class="round-button round-button1"><img src='+this.qrCode+'></div>'+
                         '<div class="round-button round-button2"><img src="dist/img/1jiabi_03.png"></div>'+
                         '<div class="box-big">'+
