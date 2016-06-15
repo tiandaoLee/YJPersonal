@@ -1485,6 +1485,7 @@
                 .attr("data-from","tuiguang-haibao")
                 .attr("data-type",$(this).attr("data-type"))
                 .find(".dz").addClass("hidden");
+		alert("点击了海报");
         YJSay.getData({
             url:"/yjsWebService/point/checkActivePlayInfo",
             data:{token:YJSay.getToken(),activeType:3,id:id},
