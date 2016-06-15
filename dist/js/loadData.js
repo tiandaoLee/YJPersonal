@@ -136,7 +136,10 @@ function loadData(id){
                         _html+='<div class="swiper-slide"><img src='+this.img+' style="width: 100%;height: 100%;"></div>';
                     });
                     $("#imgScroll").find(".swiper-wrapper").html(_html);
-                    _height = $(".intro").height();
+					if(!firstInlouPan){
+						firstInlouPan=true;
+						_height = $(".intro").height();
+					}
                     console.log(_height);
 					alert(_height);
                     //$(".intro").css({height: "20px",overflow: "hidden"});
