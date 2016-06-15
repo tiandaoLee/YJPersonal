@@ -137,9 +137,9 @@ function loadData(id){
                     });
                     $("#imgScroll").find(".swiper-wrapper").html(_html);
                     _height = $(".intro").height();
-					alert(_height);
                     console.log(_height);
-                    $(".intro").css({height: "20px",overflow: "hidden"});
+					alert(_height);
+                    //$(".intro").css({height: "20px",overflow: "hidden"});
                     mySwiper1  = new Swiper(document.getElementById("imgScroll"), {
                         slidesPerView: 'auto',
                         centeredSlides: false,
