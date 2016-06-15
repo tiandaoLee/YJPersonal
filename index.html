@@ -869,7 +869,6 @@
 <script>
     $(function(){
         new FastClick(document.body);
-		alert((new Date().getTime()-parseInt(localStorage.getItem("wLocationTime")))/(24*3600000)>=1);
 		if(YJSay.is_weiXin()
 			&&
 			(
@@ -893,19 +892,19 @@
     var myBuildId;
 
 	function wSetLocation(){
-		//if(YJSay.is_weiXin()){
+		if(YJSay.is_weiXin()){
 			YJSay.getData({
 				url:"/yjsWebService/weixin/config/postUserLocation",
 				data:{token:YJSay.getToken(),address:"",cityCode:-1,longitude:"",latitude:""},
 				success:function(data){
-				alert(JSON.stringify(data));
+					alert(JSON.stringify(data));
 					if(data.code==200){
 						localStorage.setItem("wLocation",true);
 						localStorage.setItem("wLocationTime",new Date().getTime());
 					}
 				}
 			});
-		//}
+		}
 	}
     function is_PC() {
         if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
