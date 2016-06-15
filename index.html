@@ -1647,6 +1647,7 @@
 		}else if(type=="haibao"){
 			YJSay.showImage("qrcode",$(this).find(".qrcode").attr("data-src"));
 		}else if(type=="loushu"){
+			alert($(this).html());
 			YJSay.showImage("qrcode",$(this).find("img").attr("src"));
 		}
         e.stopPropagation();
