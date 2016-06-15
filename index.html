@@ -1525,7 +1525,6 @@
         var id=$(this).attr("id");
         myTuiBuildId = $(this).closest(".imgBox").attr("id");
         var type = $(this).attr("data-type");
-		alert($("#YJ_myYJ").html());
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("活动名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-"+((type=="hongbao"||type=="baoming")?"active":type))
@@ -1554,7 +1553,6 @@
                 }
             });
         }else if(type=="haibao"){
-		alert("点了海报");
             $("#YJ_activeContent").find(".dz").addClass("hidden");
             YJSay.getData({
                 url:"/yjsWebService/point/checkActivePlayInfo",
