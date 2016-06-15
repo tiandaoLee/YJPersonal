@@ -347,7 +347,7 @@ function loadData(id){
                 $("#myIndex").text(data.myIndex);
                 var _html = "";
                 $.each(data.list, function () {
-                    _html+="<tr><td>"+this.index+"</td><td>"+this.name+"</td><td>"+this.accountId+"</td><td>"+this.socre+"</td></tr>";
+                    _html+="<tr><td>"+this.index+"</td><td>"+(YJSay.is_weiXin()?"微信用户"+this.accountId:this.name)+"</td><td>"+this.accountId+"</td><td>"+this.socre+"</td></tr>";
                 });
                 $("#YJ_zhuanQianBang").find("tbody").html(_html);
             }
