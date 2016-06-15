@@ -1552,9 +1552,8 @@
                     });
                 }
             });
-        }else if(type=="hiabao"){
+        }else if(type=="haibao"){
             $("#YJ_activeContent").find(".dz").addClass("hidden");
-			alert("点了海报");
             YJSay.getData({
                 url:"/yjsWebService/point/checkActivePlayInfo",
                 data:{token:YJSay.getToken(),activeType:3,id:id},
