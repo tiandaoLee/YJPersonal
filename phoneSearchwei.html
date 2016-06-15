@@ -48,12 +48,12 @@
             <span class="searchBt bt1height color000">销售信息：</span>
         </div>        
         <div class="box bottom20 formal-height xiangdui">
-            <span class="formal-font colora3a left">商家等级：</span>
-            <span class="formal-font color3232 right juedui">刘老根</span>
+            <span class="formal-font colora3a left">姓名：</span>
+            <span class="formal-font color3232 right juedui" id="saleName">--</span>
         </div>
         <div class="box bottom20 formal-height xiangdui">
             <span class="formal-font colora3a left">联系电话：</span>
-            <span class="formal-font color3232 right juedui">18888888888</span>
+            <span class="formal-font color3232 right juedui" id="saleTel">--</span>
         </div>
     </div>
     <div class="box-big boxPadding top10">
@@ -63,15 +63,15 @@
         </div>
         <div class="box bottom20 formal-height xiangdui">
             <span class="formal-font colora3a left">楼盘名称：</span>
-            <span class="formal-font color3232 right juedui">江锦园</span>
+            <span class="formal-font color3232 right juedui" id="buildName">--</span>
         </div>
         <div class="box bottom20 formal-height xiangdui">
             <span class="formal-font colora3a left">楼盘均价：</span>
-            <span class="formal-font color3232 right juedui">30000元/平方米</span>
+            <span class="formal-font color3232 right juedui" id="buildPrice">--元/平方米</span>
         </div>
         <div class="box">
             <p class="formal-font colora3a left bt1height">楼盘简介：</p>
-            <span class="formal-font color3232 right">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简简介简介简介简介简介简介简介简介简介简</span>
+            <span class="formal-font color3232 right" id="buildIntro">--</span>
         </div>
     </div>
     <button class="phoneSearch-button hidden">
@@ -88,6 +88,14 @@
 		if(data){
 			data = JSON.parse(data);
 			alert(data.saleUserAccountId);
+			var _buildInfo = data.buildInfo;
+			if(_buildInfo){
+				$("#saleName").text(_buildInfo.saleName);
+				$("#saleTel").text(_buildInfo.tel);
+				$("#buildName").text(_buildInfo.buildName);
+				$("#buildPrice").html(_buildInfo.salePrice+"元/平方米");
+				$("#buildIntro").html(_buildInfo.des);
+			}
 		}
 	</script>
 </body>
