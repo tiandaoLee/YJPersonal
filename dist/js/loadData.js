@@ -398,11 +398,19 @@ function loadData(id){
             YJSay.setTitle("海报内容");
         }
         console.log("首页海报内容");
+		var height = $(window).height();
+		var bottomHeight = $(".navbar-absolute-bottom").height();
+		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+getBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="home-loushu"){
         if(!test) {
             YJSay.hideBottom(true);
             YJSay.setTitle("楼书内容");
         }
+		var height = $(window).height();
+		var bottomHeight = $(".navbar-absolute-bottom").height();
+		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+				.html('<iframe id="testIframe" src='+path.replace("www","src")+' frameborder="0" style="width: 100%;height: 100%;"></iframe>');
         $('#testIframe').on('load', function(){
             console.log("加载了");
             var phoneScale = 1;
@@ -428,17 +436,29 @@ function loadData(id){
             YJSay.hideBottom(true);
             YJSay.setTitle("活动内容");
         }
+		var height = $(window).height();
+		var bottomHeight = $(".navbar-absolute-bottom").height();
+		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+buildId+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="tuiguang-haibao"){
         if(!test) {
             YJSay.hideBottom(true);
             YJSay.setTitle("海报内容");
         }
         console.log("推广海报内容");
+		var height = $(window).height();
+		var bottomHeight = $(".navbar-absolute-bottom").height();
+		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+buildId+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="tuiguang-loushu"){
         if(!test) {
             YJSay.hideBottom(true);
             YJSay.setTitle("楼书内容");
         }
+		var height = $(window).height();
+		var bottomHeight = $(".navbar-absolute-bottom").height();
+		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+				.html('<iframe id="testIframe" src='+path.replace("www","src")+' frameborder="0" style="width: 100%;height: 100%;"></iframe>');
         console.log("推广楼书内容");
     }else if(id=="#YJ_baseInfo"&&$("#YJ_baseInfo").attr("data-from")=="home-active"){
         if(!test) {
