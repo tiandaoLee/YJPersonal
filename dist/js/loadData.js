@@ -4,7 +4,6 @@
 function loadData(id){
     console.log(id);
     console.log($("#YJ_louPanIntro").is(":visible"));
-	alert(id+" "+$("#YJ_MYTUIGUANG_ACTIVE").is(":visible"));
     if(id===""||id=="#YJ_HOME"){
         if(!test){
             YJSay.hideBottom(false);
@@ -797,7 +796,6 @@ function loadData(id){
             }
         });
     }else if(id=="#YJ_myTuiGuang"&&$("#YJ_MYTUIGUANG_ACTIVE").is(":visible")){
-		alert("进入了");
         console.log("我的推广-活动");
         if(!test) {
             YJSay.hideBottom(true);
