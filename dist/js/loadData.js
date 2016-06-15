@@ -128,7 +128,7 @@ function loadData(id){
                     $("#tel").text(_loupan.tel);
                     /*$("#fax").text(loupan.fax);*/
                     $("#deliveryTime").text(_loupan.deliveryTime);
-                    $("#intro").text(_loupan.des);
+                    $("#intro").html("楼盘简介"+'<p class="box formal-font color3232 top10 intro">'+_loupan.des+'</p>');
                     //$("#saleTel").attr("href","tel:"+loupan.tel);
                     var huxing = data.buildTypeImgList;
                     var _html = "";
