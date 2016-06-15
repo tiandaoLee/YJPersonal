@@ -1641,6 +1641,7 @@
         changePage("YJ_tuiGuangJiangLi");
         e.stopPropagation();
     }).on("click",".round-button1", function () {
+		alert($(this).find("img").length);
         YJSay.showImage("qrcode",$(this).find("img").attr("src"));
         e.stopPropagation();
     });;
