@@ -890,6 +890,7 @@ function loadData(id){
     }else if(id=="#YJ_tuiGuangJiangLi"&&$("#YJ_tuiGuangJiangLi").attr("data-from")=="tuiguang-active"){
         if(!test) {
             YJSay.setTitle("推广奖励");
+			YJSay.hideBottom(true);
         }
         console.log("活动推广奖励");
         YJSay.getData({
@@ -990,6 +991,7 @@ function loadData(id){
     }else if(id=="#YJ_tuiGuangJiangLi"&&$("#YJ_tuiGuangJiangLi").attr("data-from")=="tuiguang-haibao"){
         if(!test) {
             YJSay.setTitle("推广奖励");
+			YJSay.hideBottom(true);
         }
         console.log("海报推广奖励");
         YJSay.getData({
@@ -1092,6 +1094,7 @@ function loadData(id){
     }else if(id=="#YJ_tuiGuangJiangLi"&&$("#YJ_tuiGuangJiangLi").attr("data-from")=="tuiguang-loushu"){
         if(!test) {
             YJSay.setTitle("推广奖励");
+			YJSay.hideBottom(true);
         }
         console.log("楼书推广奖励");
         YJSay.getData({
