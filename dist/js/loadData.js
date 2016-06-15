@@ -1026,6 +1026,7 @@ function loadData(id){
             url:"/yjsWebService/web/loushu/getMyLoushuList",
             data:{token:YJSay.getToken(),pageOffset:0,pageSize:99},
             success: function (data) {
+				alert(JSON.stringify(data));
                 console.log(data);
                 var _html="";
                 $.each(data.list, function (index,ele) {
