@@ -46,7 +46,7 @@ var YJSay = (function ($) {
         },
         getToken: function () {
             if(is_PC()){
-                token = "B60BF8C33E0E4CD4AF17A7EAF1AA88B9";
+                token = "23FB96E8F0C945ED9A90CE6B3833BD92";
                 return token;
             }else{
                 if(!token){

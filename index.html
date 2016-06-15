@@ -870,7 +870,7 @@
     $(function(){
         new FastClick(document.body);
 		alert(!localStorage.getItem("wLocation"));
-		if(YJSay.is_weiXin()
+		/*if(YJSay.is_weiXin()
 			&&
 			(
 				!localStorage.getItem("wLocation")
@@ -880,9 +880,9 @@
 					-parseInt(localStorage.getItem("wLocationTime"))
 				)/(24*3600000)>=1
 			)
-		){
+		){*/
 			wSetLocation();
-		}
+		//}
     });
     var test = is_PC();
     var _height;
@@ -893,7 +893,7 @@
     var myBuildId;
 
 	function wSetLocation(){
-		if(YJSay.is_weiXin()){
+		//if(YJSay.is_weiXin()){
 			YJSay.getData({
 				url:"/yjsWebService/weixin/config/postUserLocation",
 				data:{token:YJSay.getToken(),address:-1,cityCode:"",longitude:"",latitude:""},
@@ -906,7 +906,7 @@
 					}
 				}
 			});
-		}
+		//}
 	}
     function is_PC() {
         if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
