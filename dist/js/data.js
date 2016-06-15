@@ -34,9 +34,6 @@ var YJSay = (function ($) {
                 $(".mask").addClass('hidden');
             }
 			history.back();
-			if($("iframe").length&&location.hash.indexOf("#YJ_activeContent")==-1){
-				$("iframe").remove(); 
-			}
         },
         setTitle: function (title) {
             this.useNativeFunction("setTitle",title);

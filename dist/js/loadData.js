@@ -391,7 +391,7 @@ function loadData(id){
 		var height = $(window).height();
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getHomeBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="home-haibao"){
         if(!test) {
             YJSay.hideBottom(true);
@@ -401,7 +401,7 @@ function loadData(id){
 		var height = $(window).height();
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+getBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+getHomeBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="home-loushu"){
         if(!test) {
             YJSay.hideBottom(true);
@@ -439,7 +439,7 @@ function loadData(id){
 		var height = $(window).height();
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+buildId+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getTuiBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="tuiguang-haibao"){
         if(!test) {
             YJSay.hideBottom(true);
@@ -449,7 +449,7 @@ function loadData(id){
 		var height = $(window).height();
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
-				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+buildId+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/'+getTuiBuildId()+'/'+$("#YJ_activeContent").attr("data-activeId")+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="tuiguang-loushu"){
         if(!test) {
             YJSay.hideBottom(true);

@@ -889,7 +889,8 @@
     var hasGuanzhu;
     var path;
     var activeLeftTime;
-    var myBuildId;
+    var myHomeBuildId;
+	var myTuiBuildId;
 
 	function wSetLocation(){
 		if(YJSay.is_weiXin()){
@@ -917,6 +918,9 @@
 		if(YJSay.is_weiXin()){
 			$(".zf").addClass("hidden");
 		}
+		if($("iframe").length&&location.hash.indexOf("#YJ_activeContent")==-1){
+			$("iframe").remove(); 
+		}
         var id = location.hash;
         $(".page-active").removeClass("page-active");
         if(id.split("?")[0]||(id.indexOf("YJ_activeContent")!=-1&&id.split("?").length==1)){
@@ -924,7 +928,7 @@
         }
         if(id.indexOf("YJ_louPanDetail")!=-1){
             if(id.split("?").length!=1){
-                myBuildId = YJSay.getUrlParamValue(id,"buildId");
+                myHomeBuildId = YJSay.getUrlParamValue(id,"buildId");
             }
             $("#YJ_louPanDetail").find(".tab").eq(0).trigger("click");
         }
@@ -1072,13 +1076,16 @@
         changePage(page);
         loadData(page);
     }
-    function getBuildId(){
-        if(myBuildId==undefined){
+    function getHomeBuildId(){
+        if(myHomeBuildId==undefined){
             return $("#YJ_louPanDetail").attr("data-louPanId");
         }else{
-            return myBuildId;
+            return myHomeBuildId;
         }
     }
+	function getTuiBuildId(){
+		return myTuiBuildId;
+	}
     //设置楼盘介绍手风琴效果
     $("#loupanDetailToggle").on("click", function () {
         if ($(this).find("i").hasClass("fa-angle-down")){
@@ -1434,7 +1441,7 @@
     });
     $("#YJ_MYTUIGUANG_ACTIVE").on("click",".listImg", function () {
         var id=$(this).attr("id");
-        var buildId = $(this).closest(".imgBox").attr("id");
+        myTuiBuildId = $(this).closest(".imgBox").attr("id");
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("活动名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-active")
@@ -1472,7 +1479,7 @@
     });
     $("#YJ_MYTUIGUANG_HAIBAO").on("click",".listImg", function () {
         var id=$(this).attr("id");
-        var buildId = $(this).closest(".imgBox").attr("id");
+        myTuiBuildId = $(this).closest(".imgBox").attr("id");
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("海报名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-haibao")
