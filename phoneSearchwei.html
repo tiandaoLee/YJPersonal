@@ -106,6 +106,7 @@
 		$("#gz").on("click",function(){
 			$.ajax({
 				url:baseUrl+"yjsWebService/build/subscribeBuild?callback=?",
+				dataType:"jsonp",
 				data:{token:weChartToken,buildId:buildId},
 				success:function(data){
 					alert(data);
