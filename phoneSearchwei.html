@@ -78,7 +78,7 @@
         点击关注
     </button>
 
-    <button class="phoneSearch-buttonNo hidden">
+    <button class="phoneSearch-buttonNo hidden" id="hasGz">
         已关注
     </button>
 	<script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
@@ -109,7 +109,11 @@
 				dataType:"jsonp",
 				data:{token:weChartToken,buildId:buildId},
 				success:function(data){
-					alert(data.code);
+					if(data.code==200){
+						alert("关注成功");
+						$("#hasGz").removeClass("hidden");
+						$("#gz").addClass("hidden");
+					}
 				}
 			});
 			
