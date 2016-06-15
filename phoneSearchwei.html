@@ -74,7 +74,7 @@
             <span class="formal-font color3232 right" id="buildIntro">--</span>
         </div>
     </div>
-    <button class="phoneSearch-button hidden">
+    <button class="phoneSearch-button hidden" id="gz">
         点击关注
     </button>
 
@@ -101,6 +101,9 @@
 				$("#buildIntro").html(_buildInfo.des);
 			}
 		}
+		$("#gz").on("click",function(){
+			alert(111);
+		});
 	</script>
 </body>
 </html>
