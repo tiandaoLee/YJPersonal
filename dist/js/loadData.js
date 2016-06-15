@@ -371,8 +371,8 @@ function loadData(id){
                     $("#YJ_myWollet_USERNAME").text(_userInfo.name);//用户名
                     $("#YJ_myWollet_IMGURL").attr("src",_userInfo.imgUrl);//用户头像
                     $("#YJ_myWollet_VANTAGES").text(_userInfo.vantages);//总积分
-                    $("#YJ_myWollet_VALID_VANTAGES").text(_userInfo.validVantages);//余额
-                    $('#YJ_myWollet_DAILY_POINT').text(_userInfo.dailyPoint);//今日收入
+                    $("#YJ_myWollet_VALID_VANTAGES").text(_userInfo.validVantages/100);//余额
+                    $('#YJ_myWollet_DAILY_POINT').text(_userInfo.dailyPoint/100);//今日收入
                     $("#YJ_myWollet").find(".level").attr("src",_userInfo.rankImage);//等级
                     var _list = data.list;
                     var _html = "";
