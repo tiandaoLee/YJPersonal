@@ -108,6 +108,7 @@
 				url:baseUrl+"yjsWebService/build/subscribeBuild?callback=?",
 				data:{token:weChartToken,buildId:buildId},
 				success:function(data){
+					alert(data);
 					data = eval("("+data+")");
 					alert(data.code);
 				}
