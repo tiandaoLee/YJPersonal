@@ -14,7 +14,7 @@ var YJSay = (function ($) {
             $.ajax({
                 url:this.baseUrl+option.url,
                 dataType:"JSON",
-                type:"POST",
+                type:option.type||"POST",
                 beforeSend: function () {
                     $(".mask1").removeClass("hidden");
                 },
