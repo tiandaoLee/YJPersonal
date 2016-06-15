@@ -141,7 +141,7 @@ function loadData(id){
 						_height = $(".intro").height();
 					}
                     console.log(_height);
-                    $(".intro").css({height: "20px",overflow: "hidden"});
+                    $(".intro").css({height: "18px",overflow: "hidden"});
                     mySwiper1  = new Swiper(document.getElementById("imgScroll"), {
                         slidesPerView: 'auto',
                         centeredSlides: false,
