@@ -4,6 +4,7 @@
 function loadData(id){
     console.log(id);
     console.log($("#YJ_louPanIntro").is(":visible"));
+	alert($("#YJ_MYTUIGUANG_ACTIVE").is(":visible"));
     if(id===""||id=="#YJ_HOME"){
         if(!test){
             YJSay.hideBottom(false);
