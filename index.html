@@ -1098,6 +1098,7 @@
         console.log($(this).attr("data-salename"));
         console.log($(this).attr("data-saletel"));
         console.log($(this).attr("id"));
+		firstInlouPan = false;
         /*设置data-louPanId用于之后接口传递楼盘ID参数，设置data-salename和data-saletel为了在楼盘介绍页面设置销售名字和销售电话*/
         $("#YJ_louPanDetail").attr("data-louPanId",$(this).attr("id"));
         changePage("YJ_louPanDetail?buildId="+$(this).attr("id"));
