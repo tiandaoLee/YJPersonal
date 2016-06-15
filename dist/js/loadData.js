@@ -1437,8 +1437,8 @@ function loadData(id){
                             '<img class="listImg" src='+this.coverPictureDisplay+' id="'+this.id+'" data-path="'+(this.type==1?this.path:"")+'" data-type='+(this.type==1?"loushu":"haibao")+'>'+
                             '<div class="round-button round-button1">'+(this.type==1?"<img src="+this.qrCode+">":"<div class='qrcode' data-src="+this.qrCode+"></div>")+'</div>'+
                             '<div class="round-button round-button2"><img src="dist/img/1jiabi_03.png"></div>'+
-                            '<div class="box-big boxPadding">'+
-                            '<div class="box bt1height xiangdui">'+
+                            '<div class="box-big">'+
+                            '<div class="box xiangdui boxPadding">'+
                             '<span class="bt1 color3232">'+this.name+'</span>'+
                             '<div class="boxPadding juedui text-center" style="width: 8rem;background: #e61f42;padding-top: 7px;padding-bottom: 6px;">'+
                             '<div class="box bt1height ">'+
