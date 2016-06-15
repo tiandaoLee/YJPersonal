@@ -83,6 +83,10 @@
     </button>
 	<script type="text/javascript" src="http://www.yjsvip.com/member/publicStatic/h5ds/scripts/library/jquery-2.0.0.min.js"></script>
 	<script>
+		var baseUrl = 'http://src.yjsvip.com/',  //接口地址
+        orgUrl = '',  //登录成功跳转相应业务逻辑地址
+        //referrer = document.referrer,
+        weChartToken = localStorage.getItem('weChartToken');
 		alert(localStorage.getItem("salerLouPan"));
 		var data = localStorage.getItem("salerLouPan");
 		if(data){
