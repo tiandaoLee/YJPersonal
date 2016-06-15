@@ -89,10 +89,12 @@
         weChartToken = localStorage.getItem('weChartToken');
 		alert(localStorage.getItem("salerLouPan"));
 		var data = localStorage.getItem("salerLouPan");
+		var buildId="";
 		if(data){
 			data = JSON.parse(data);
 			alert(data.saleUserAccountId);
 			var _buildInfo = data.buildInfo;
+			buildId = _buildInfo.id;
 			if(_buildInfo){
 				$("#saleName").text(data.saleName);
 				$("#saleTel").text(_buildInfo.tel);
@@ -102,7 +104,14 @@
 			}
 		}
 		$("#gz").on("click",function(){
-			alert(111);
+			$.ajax({
+				url:baseUrl+"yjsWebService/build/subscribeBuild?callback=?",
+				data:{token:weChartToken,buildId:buildId},
+				success:function(data){
+					alert(JSON.stringify(data));
+				}
+			});
+			
 		});
 	</script>
 </body>
