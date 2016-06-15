@@ -23,7 +23,7 @@ function loadData(id){
                 var _userInfo = data.userInfo;
                 console.log(_userInfo);
                 if(_userInfo&&!YJSay.isEmptyObject(_userInfo)){
-                    $("#YJ_HOME_USERNAME").text(_userInfo.name);//用户名
+                    $("#YJ_HOME_USERNAME").text(YJSay.is_weiXin()?"微信用户"+data.userAccountId:_userInfo.name);//用户名
                     $("#YJ_HOME_IMGURL").attr("src",_userInfo.imgUrl);//用户头像
                     $("#YJ_HOME_VANTAGES").text(_userInfo.vantages);//总积分
                     $("#YJ_HOME_VALID_VANTAGES").text(_userInfo.validVantages);//余.额
