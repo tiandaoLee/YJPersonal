@@ -1508,6 +1508,7 @@
     $("#YJ_MYTUIGUANG_LOUSHU").on("click",".listImg", function () {
         var id=$(this).attr("id");
         path = $(this).attr("data-path");
+		alert(path);
         $("#YJ_ACTIVITE_CONTENT_TITLE").find("div").text("楼书名称");
         $("#YJ_activeContent").attr("data-activeId",id)
                 .attr("data-from","tuiguang-loushu")

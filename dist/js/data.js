@@ -105,7 +105,6 @@ var YJSay = (function ($) {
         },
         transmit: function (url) {
             this.useNativeFunction("transmit",url);
-            encodeURIComponent()
         },
         callTel: function (tel) {
             this.useNativeFunction("callTel",tel);
