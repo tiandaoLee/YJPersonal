@@ -76,7 +76,7 @@
 			_search(localStorage.getItem('weChartToken'),$("#saleTel").val());
 		});
 		function _search(token,tel){
-		alert(token,tel);
+		alert(token+" "+tel);
 			$.ajax({
 				url: baseUrl+'/yjsWebService/weixin/user/searchMySaleInfoByTel?callback=?', 
 				dataType: 'jsonp',
