@@ -78,7 +78,7 @@
 		function _search(token,tel){
 		alert(token+" "+tel);
 			$.ajax({
-				url: baseUrl+'yjsWebService/weixin/search/searchMySaleInfoByTel?callback=?', 
+				url: baseUrl+'yjsWebService/weixin/search/searchMySaleInfoByTel?callback=1234', 
 				dataType: 'jsonp',
 				data:{'token': token, 'tel':tel},
 				success: function(data){
