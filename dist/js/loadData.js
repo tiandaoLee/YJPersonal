@@ -26,8 +26,8 @@ function loadData(id){
                     $("#YJ_HOME_USERNAME").text(_userInfo.name.length>6?_userInfo.name.substring(0,6)+"...":_userInfo.name);//用户名
                     $("#YJ_HOME_IMGURL").attr("src",_userInfo.imgUrl);//用户头像
                     $("#YJ_HOME_VANTAGES").text(_userInfo.vantages);//总积分
-                    $("#YJ_HOME_VALID_VANTAGES").text(_userInfo.validVantages);//余.额
-                    $('#YJ_HOME_DAILY_POINT').text(_userInfo.dailyPoint);//今日收入
+                    $("#YJ_HOME_VALID_VANTAGES").text(_userInfo.validVantages/100);//余额
+                    $('#YJ_HOME_DAILY_POINT').text(_userInfo.dailyPoint/100);//今日收入
                     $("#YJ_HOME").find(".paiMing").text(_userInfo.myIndex);//排名
                     $("#YJ_HOME").find(".level").attr("src",_userInfo.rankImage);//等级
                     var _buildList = data.buildList;
