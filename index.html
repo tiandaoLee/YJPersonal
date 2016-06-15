@@ -1625,7 +1625,25 @@
                 }
             });
         }
-    });
+    }).on("click",".round-button2", function () {
+		var type = $(this).siblings(".listImg").attr("data-type");
+		var id = $(this).siblings(".listImg").attr("id");
+		if(type=="baoming"||type=="hongbao"){
+			$("#YJ_tuiGuangJiangLi").attr("data-activeId",id)
+                .attr("data-from","tuiguang-active");
+		}else if(type=="haibao"){
+			$("#YJ_tuiGuangJiangLi").attr("data-activeId",id)
+                .attr("data-from","tuiguang-haibao");
+		}else if(type=="loushu"){
+			$("#YJ_tuiGuangJiangLi").attr("data-activeId",id)
+                .attr("data-from","tuiguang-loushu");
+		}
+        changePage("YJ_tuiGuangJiangLi");
+        e.stopPropagation();
+    }).on("click",".round-button1", function () {
+        YJSay.showImage("qrcode",$(this).find("img").attr("src"));
+        e.stopPropagation();
+    });;
     $("body").on("click",".alarm", function () {
         var time = $(this).attr("data-start");
         var cur = new Date();
