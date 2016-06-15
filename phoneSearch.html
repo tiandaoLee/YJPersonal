@@ -85,7 +85,7 @@
 				alert(JSON.stringify(data));
 					var code = data.code;
 					if(code==='200'){
-						localStorage.setItem("salerLouPan",data);
+						localStorage.setItem("salerLouPan",JSON.stringify(data));
 						locatioon.href = "phoneSearchwei.html";
 						// location.href = data.url;
 						//location.href = localStorage.getItem('referrer');
