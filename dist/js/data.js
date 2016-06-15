@@ -198,14 +198,13 @@ var YJSay = (function ($) {
         },
         zhuanFa: function (activeId,type) {
             var _self = this;
-			_self.checkSecurityKey(type,activeId);
-			alert(_self.getToken()+" "+activeId+" "+_self.getSecurityKey());
+            _self.checkSecurityKey(type,activeId);
             if(type==5){
                 _self.getData({
                     url:"/yjsWebService/point/getHunheZhuanFaPoint",
                     data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
                     success: function (data) {
-                        alert(JSON.stringify(data));
+                        //console.log(JSON.stringify(data));
                         _self.setSecurityKey(data.pointInfo.securityKey);
                     }
                 });
