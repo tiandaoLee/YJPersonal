@@ -869,15 +869,15 @@
 <script>
     $(function(){
         new FastClick(document.body);
-		alert(YJSay.is_weiXin()&&(!localStorage.setItem("wLocation")||(new Date().getTime()-parseInt(localStorage.setItem("wLocationTime")))/(24*3600000)>=1));
+		alert(YJSay.is_weiXin()&&(!localStorage.getItem("wLocation")||(new Date().getTime()-parseInt(localStorage.getItem("wLocationTime")))/(24*3600000)>=1));
 		if(YJSay.is_weiXin()
 			&&
 			(
-				!localStorage.setItem("wLocation")
+				!localStorage.getItem("wLocation")
 				||
 				(
 					new Date().getTime()
-					-parseInt(localStorage.setItem("wLocationTime"))
+					-parseInt(localStorage.getItem("wLocationTime"))
 				)/(24*3600000)>=1
 			)
 		){
