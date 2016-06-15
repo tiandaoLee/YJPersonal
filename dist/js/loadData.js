@@ -94,7 +94,7 @@ function loadData(id){
         }
         YJSay.getData({
             url:"/yjsWebService/build/getBuildInfoDetail",
-            data:{token:YJSay.getToken(),buildId:getBuildId()},
+            data:{token:YJSay.getToken(),buildId:getHomeBuildId()},
             success: function (data) {
                 if(data.code==8003&&YJSay.is_weiXin()){
 					localStorage.setItem("locationHref",location.hash);
@@ -147,7 +147,7 @@ function loadData(id){
                     });
                     YJSay.getData({
                         url:"/yjsWebService/config/getBuildLocation",
-                        data:{buildId:getBuildId()},
+                        data:{buildId:getHomeBuildId()},
                         success: function (data) {
                             YJSay.useNativeFunction("setLocation",data.lat+"&"+data.lng,buildName,_loupan.addressDisplay);
                         },error: function () {
@@ -166,7 +166,7 @@ function loadData(id){
         }
         YJSay.getData({
             url:"/yjsWebService/build/hunhe/getHunheListByBuildId",
-            data:{token:YJSay.getToken(),buildId:getBuildId(),pageOffset:0,pageSize:99},
+            data:{token:YJSay.getToken(),buildId:getHomeBuildId(),pageOffset:0,pageSize:99},
             success: function (data) {
                 console.log(data);
                 var alarmList = YJSay.getAlarmList();
@@ -245,7 +245,7 @@ function loadData(id){
         }
         YJSay.getData({
             url:"/yjsWebService/build/haibao/getHaibaoListByBuildId",
-            data:{token:YJSay.getToken(),buildId:getBuildId(),pageOffset:0,pageSize:99},
+            data:{token:YJSay.getToken(),buildId:getHomeBuildId(),pageOffset:0,pageSize:99},
             success: function (data) {
                 console.log(data);
                 var _html="";
@@ -283,7 +283,7 @@ function loadData(id){
         }
         YJSay.getData({
             url:"/yjsWebService/build/loushu/getLoushuListByBuildId",
-            data:{token:YJSay.getToken(),buildId:getBuildId(),pageOffset:0,pageSize:99},
+            data:{token:YJSay.getToken(),buildId:getHomeBuildId(),pageOffset:0,pageSize:99},
             success: function (data) {
                 alert(JSON.stringify(data));
                 var _html="";
@@ -318,7 +318,7 @@ function loadData(id){
         }
         YJSay.getData({
             url:"/yjsWebService/build/getBuildYijiabi",
-            data:{token:YJSay.getToken(),buildId:getBuildId()},
+            data:{token:YJSay.getToken(),buildId:getHomeBuildId()},
             success: function (data) {
                 alert(JSON.stringify(data));
                 console.log(data);
