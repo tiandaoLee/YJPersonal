@@ -205,7 +205,7 @@ var YJSay = (function ($) {
                     url:"/yjsWebService/point/getHunheZhuanFaPoint",
                     data:{token:_self.getToken(),sourceId:activeId,securityKey:_self.getSecurityKey()},
                     success: function (data) {
-                        //alert(JSON.stringify(data));
+                        alert(JSON.stringify(data));
                         _self.setSecurityKey(data.pointInfo.securityKey);
                     }
                 });
