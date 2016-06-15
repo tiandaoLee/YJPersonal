@@ -870,7 +870,7 @@
     $(function(){
         new FastClick(document.body);
 		alert(!localStorage.getItem("wLocation"));
-		/*if(YJSay.is_weiXin()
+		if(YJSay.is_weiXin()
 			&&
 			(
 				!localStorage.getItem("wLocation")
@@ -880,9 +880,9 @@
 					-parseInt(localStorage.getItem("wLocationTime"))
 				)/(24*3600000)>=1
 			)
-		){*/
+		){
 			wSetLocation();
-		//}
+		}
     });
     var test = is_PC();
     var _height;
@@ -897,7 +897,6 @@
 			YJSay.getData({
 				url:"/yjsWebService/weixin/config/postUserLocation",
 				data:{token:YJSay.getToken(),address:"",cityCode:-1,longitude:"",latitude:""},
-				type:"GET",
 				success:function(data){
 				alert(JSON.stringify(data));
 					if(data.code==200){
