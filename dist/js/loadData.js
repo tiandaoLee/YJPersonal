@@ -796,6 +796,7 @@ function loadData(id){
             }
         });
     }else if(id=="#YJ_tuiGuang"&&$("#YJ_MYTUIGUANG_ACTIVE").is(":visible")){
+		alert("进入了");
         console.log("我的推广-活动");
         if(!test) {
             YJSay.hideBottom(true);
