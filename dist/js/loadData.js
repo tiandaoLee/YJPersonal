@@ -460,6 +460,24 @@ function loadData(id){
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
 				.html('<iframe id="testIframe" src='+path.replace("www","src")+' frameborder="0" style="width: 100%;height: 100%;"></iframe>');
+		$('#testIframe').on('load', function(){
+            console.log("加载了");
+            var phoneScale = 1;
+            //phoneWidth = parseInt(window.screen.width);
+            phoneWidth = $(window).width();
+            phoneScale = phoneWidth/640;
+
+            var dom=$('body',parent.document).find('#testIframe').contents().find('#coolapp').find('.wrap');
+            //var dom=$('body',parent.document).find('#testIframe');
+            //var dom=$('body',parent.document).find('#testIframe').contents().find('body');
+            dom.css({
+                'transform': 'scale('+phoneScale+','+phoneScale+')',
+                'transform-origin':'left top',
+                'height': '300%',
+                'width': '300%'
+            });
+            //dom.find('#coolapp').find('.wrap').width('300%');
+        });
         console.log("推广楼书内容");
     }else if(id=="#YJ_baseInfo"&&$("#YJ_baseInfo").attr("data-from")=="home-active"){
         if(!test) {
