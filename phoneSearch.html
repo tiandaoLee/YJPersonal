@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>搜索销售</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
@@ -85,6 +85,8 @@
 				alert(JSON.stringify(data));
 					var code = data.code;
 					if(code==='200'){
+						localStorage.setItem("salerLouPan",data);
+						locatioon.href = "phoneSearchwei.html";
 						// location.href = data.url;
 						//location.href = localStorage.getItem('referrer');
 					}else if(code==='8003'){
