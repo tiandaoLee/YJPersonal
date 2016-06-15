@@ -34,6 +34,9 @@ var YJSay = (function ($) {
                 $(".mask").addClass('hidden');
             }
 			history.back();
+			if(location.hash.indexOf("#YJ_activeContent")){
+				alert(111);
+			}
 			if($("iframe").length){
 				$("iframe").remove(); 
 			}
