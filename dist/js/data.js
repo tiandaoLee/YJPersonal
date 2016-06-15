@@ -200,6 +200,7 @@ var YJSay = (function ($) {
         zhuanFa: function (activeId,type) {
             var _self = this;
 			_self.checkSecurityKey(type,activeId);
+			alert(_self.getToken()+" "+activeId+" "+_self.getSecurityKey());
             if(type==5){
                 _self.getData({
                     url:"/yjsWebService/point/getHunheZhuanFaPoint",
