@@ -108,7 +108,8 @@
 				url:baseUrl+"yjsWebService/build/subscribeBuild?callback=?",
 				data:{token:weChartToken,buildId:buildId},
 				success:function(data){
-					alert(JSON.stringify(data));
+					data = eval("("+data+")");
+					alert(data.code);
 				}
 			});
 			
