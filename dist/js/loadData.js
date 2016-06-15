@@ -23,7 +23,7 @@ function loadData(id){
                 var _userInfo = data.userInfo;
                 console.log(_userInfo);
                 if(_userInfo&&!YJSay.isEmptyObject(_userInfo)){
-                    $("#YJ_HOME_USERNAME").text(YJSay.is_weiXin()&&_userInfo.name.length>6?_userInfo.name.substring(0,5)+"...":_userInfo.name);//用户名
+                    $("#YJ_HOME_USERNAME").text(YJSay.is_weiXin()&&_userInfo.name.length>6?_userInfo.name.substring(0,6)+"...":_userInfo.name);//用户名
                     $("#YJ_HOME_IMGURL").attr("src",_userInfo.imgUrl);//用户头像
                     $("#YJ_HOME_VANTAGES").text(_userInfo.vantages);//总积分
                     $("#YJ_HOME_VALID_VANTAGES").text(_userInfo.validVantages);//余.额
@@ -347,7 +347,7 @@ function loadData(id){
                 $("#myIndex").text(data.myIndex);
                 var _html = "";
                 $.each(data.list, function () {
-                    _html+="<tr><td>"+this.index+"</td><td>"+(YJSay.is_weiXin()&&this.name.length>6?this.name.substring(0,5)+"...":this.name)+"</td><td>"+this.accountId+"</td><td>"+this.socre+"</td></tr>";
+                    _html+="<tr><td>"+this.index+"</td><td>"+(YJSay.is_weiXin()&&this.name.length>6?this.name.substring(0,6)+"...":this.name)+"</td><td>"+this.accountId+"</td><td>"+this.socre+"</td></tr>";
                 });
                 $("#YJ_zhuanQianBang").find("tbody").html(_html);
             }
