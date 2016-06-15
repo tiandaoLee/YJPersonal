@@ -169,6 +169,7 @@ function loadData(id){
             url:"/yjsWebService/build/hunhe/getHunheListByBuildId",
             data:{token:YJSay.getToken(),buildId:getHomeBuildId(),pageOffset:0,pageSize:99},
             success: function (data) {
+				alert(JSON.stringify(data));
                 console.log(data);
                 var alarmList = YJSay.getAlarmList();
                 var _html="";
@@ -248,6 +249,7 @@ function loadData(id){
             url:"/yjsWebService/build/haibao/getHaibaoListByBuildId",
             data:{token:YJSay.getToken(),buildId:getHomeBuildId(),pageOffset:0,pageSize:99},
             success: function (data) {
+				alert(JSON.stringify(data));
                 console.log(data);
                 var _html="";
                 $.each(data.activeList, function (index,ele) {
