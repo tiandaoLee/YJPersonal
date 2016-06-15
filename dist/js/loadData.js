@@ -1016,12 +1016,12 @@ function loadData(id){
             YJSay.setTitle("推广奖励");
 			YJSay.hideBottom(true);
         }
+		alert($("#YJ_tuiGuangJiangLi").attr("data-activeId"));
         console.log("海报推广奖励");
         YJSay.getData({
             url:"/yjsWebService/web/hunhe/getHunhePointByActiveId",
             data:{token:YJSay.getToken(),haibaoId:$("#YJ_tuiGuangJiangLi").attr("data-activeId")},
             success: function (data) {
-				alert(JSON.stringify(data));
                 console.log(data);
                 var _point = data.pointInfo;
                 $("#YJ_ZHUANFA_JIFEN").closest("li").show();
