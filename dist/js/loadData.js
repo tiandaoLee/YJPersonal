@@ -388,6 +388,10 @@ function loadData(id){
             YJSay.setTitle("活动内容");
         }
         console.log("首页活动内容");
+		var height = $(window).height();
+		var bottomHeight = $(".navbar-absolute-bottom").height();
+		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"})
+				.html('<iframe id="testIframe" src="'+YJSay.baseUrl+'/img/haibao/jsEditor/poster/diy/'+getBuildId()+'/'+id+'/1.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>');
     }else if(id=="#YJ_activeContent"&&$("#YJ_activeContent").attr("data-from")=="home-haibao"){
         if(!test) {
             YJSay.hideBottom(true);
