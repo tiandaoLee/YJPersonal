@@ -1414,7 +1414,7 @@
     $("#YJ_tuiGuang").find("li").on("click", function () {
         $(this).addClass("tabActive").siblings().removeClass("tabActive");
         $("#YJ_myTuiGuang").find(".tabContent").hide().eq($(this).index()).show();
-        loadData("#YJ_tuiGuang");
+        loadData("#YJ_myTuiGuang");
     });
     $("#YJ_MYTUIGUANG_ACTIVE").on("click",".listImg", function () {
         var id=$(this).attr("id");

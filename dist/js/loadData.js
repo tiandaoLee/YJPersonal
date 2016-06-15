@@ -796,7 +796,7 @@ function loadData(id){
 
             }
         });
-    }else if(id=="#YJ_tuiGuang"&&$("#YJ_MYTUIGUANG_ACTIVE").is(":visible")){
+    }else if(id=="#YJ_myTuiGuang"&&$("#YJ_MYTUIGUANG_ACTIVE").is(":visible")){
 		alert("进入了");
         console.log("我的推广-活动");
         if(!test) {
@@ -941,7 +941,7 @@ function loadData(id){
                 }
             }
         });
-    }else if(id=="#YJ_tuiGuang"&&$("#YJ_MYTUIGUANG_HAIBAO").is(":visible")){
+    }else if(id=="#YJ_myTuiGuang"&&$("#YJ_MYTUIGUANG_HAIBAO").is(":visible")){
         if(!test) {
             YJSay.setTitle("我的推广");
         }
@@ -1042,7 +1042,7 @@ function loadData(id){
                 }
             }
         });
-    }else if(id=="#YJ_tuiGuang"&&$("#YJ_MYTUIGUANG_LOUSHU").is(":visible")){
+    }else if(id=="#YJ_myTuiGuang"&&$("#YJ_MYTUIGUANG_LOUSHU").is(":visible")){
         if(!test) {
             YJSay.setTitle("我的推广");
         }
