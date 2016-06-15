@@ -1016,10 +1016,9 @@ function loadData(id){
             YJSay.setTitle("推广奖励");
 			YJSay.hideBottom(true);
         }
-		alert($("#YJ_tuiGuangJiangLi").attr("data-activeId"));
         console.log("海报推广奖励");
         YJSay.getData({
-            url:"/yjsWebService/web/hunhe/getHunhePointByActiveId",
+            url:"/yjsWebService/build/haibao/getHaibaoPointByActiveId",
             data:{token:YJSay.getToken(),haibaoId:$("#YJ_tuiGuangJiangLi").attr("data-activeId")},
             success: function (data) {
                 console.log(data);
