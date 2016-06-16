@@ -85,7 +85,7 @@ var YJSay = (function ($) {
 			//this.getWXTicket();
 			$.ajax({
 			  type : "get",
-			  url : "http://test.qingniao8.com/loveShe_admin/index.php/ajaxWeChart/createSign/?url="+this.baseUrl+'/img/YJPersonal/index.html',
+			  url : "http://test.qingniao8.com/loveShe_admin/index.php/ajaxWeChart/createSign/?url="+this.baseUrl+"/img/YJPersonal/index.html",
 			  dataType : "jsonp",
 			  success : function(data){ 
 				  wx.config({
