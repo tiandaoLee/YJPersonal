@@ -65,6 +65,78 @@ var YJSay = (function ($) {
                 }
             }
         },
+		getWXTicket:function(){
+			var _self = this;
+			_self.getData({
+				url:"/yjsWebService/weixin/config/getWeiXinTicket",
+				async:false,
+				data:{token:_self.getToken()},
+				success:function(data){
+					alert(JSON.stringify(data));
+					if(data.ticket){
+						localStorage.setItem("wxTicket",data.ticket);
+					}
+				}
+			});
+		},
+		initWXSDK:function(){
+			this.getWXTicket();
+			alert(hex_sha1(localStorage.getItem("wxTicket")));
+			wx.config({
+			  debug: true,
+			  appId: 'wx93ccd8dccdd06205',
+			  timestamp: 1465653179,
+			  nonceStr: 'Iup3I2PGsq09cSpz',
+			  signature: hex_sha1(localStorage.getItem("wxTicket")),
+			  jsApiList: [
+				'checkJsApi',
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage',
+				'onMenuShareQQ',
+				'onMenuShareWeibo',
+				'onMenuShareQZone',
+				'hideMenuItems',
+				'showMenuItems',
+				'hideAllNonBaseMenuItem',
+				'showAllNonBaseMenuItem',
+				'translateVoice',
+				'startRecord',
+				'stopRecord',
+				'onVoiceRecordEnd',
+				'playVoice',
+				'onVoicePlayEnd',
+				'pauseVoice',
+				'stopVoice',
+				'uploadVoice',
+				'downloadVoice',
+				'chooseImage',
+				'previewImage',
+				'uploadImage',
+				'downloadImage',
+				'getNetworkType',
+				'openLocation',
+				'getLocation',
+				'hideOptionMenu',
+				'showOptionMenu',
+				'closeWindow',
+				'scanQRCode',
+				'chooseWXPay',
+				'openProductSpecificView',
+				'addCard',
+				'chooseCard',
+				'openCard'
+			  ]
+		  });
+		},
+		scanQRCode:function(){
+			wx.scanQRCode({
+				needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+				scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+				success: function (res) {
+					//var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+				}
+			});
+		},
         setSecurityKey: function (security) {
             securityKey = security;
         },

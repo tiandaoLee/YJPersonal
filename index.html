@@ -866,12 +866,17 @@
 <script src="dist/js/jquery.qrcode.min.js"></script>
 <script src="dist/js/swiper-3.3.1.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="dist/js/fastclick.js"></script>
+<script src="dist/js/sha1.js"></script>
 <script src="dist/js/data.js?v=222"></script>
 <script src="dist/js/loadData.js?v=222"></script>
 <script>
     $(function(){
         new FastClick(document.body);
+		if(YJSay.is_weiXin()){
+			YJSay.initWXSDK();
+		}
 		if(YJSay.is_weiXin()
 			&&
 			(
@@ -917,7 +922,11 @@
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"});
 	});
 	$("#YJ_hasNoBuild").on("click",function(){
-		YJSay.useNativeFunction("scanQRCode");
+		if(YJSay.is_weiXin()){
+			YJSay.scanQRCode();
+		}else{
+			YJSay.useNativeFunction("scanQRCode");
+		}
 	});
     function is_PC() {
         if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
