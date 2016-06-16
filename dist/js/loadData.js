@@ -773,6 +773,7 @@ function loadData(id){
             }
         });
     }else if(id=="#YJ_myParticipation"&&$("#YJ_activeContent").attr("data-type")=="haibao"){
+		alert("进入了我的参与-海报");
         if(!test) {
             YJSay.setTitle("我的参与");
         }
