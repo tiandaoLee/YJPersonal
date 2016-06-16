@@ -921,13 +921,14 @@
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"});
 	});
-	$("#YJ_hasNoBuild").on("click",function(){
+	//后期优化，需要解析二维码
+	/*$(".loginButton").on("click",function(){
 		if(YJSay.is_weiXin()){
 			YJSay.scanQRCode();
 		}else{
 			YJSay.useNativeFunction("scanQRCode");
 		}
-	});
+	});*/
     function is_PC() {
         if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
             return false;
