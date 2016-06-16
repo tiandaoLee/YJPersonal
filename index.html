@@ -1384,9 +1384,13 @@
         var activeId = $("#YJ_activeContent").attr("data-activeId");
         var type = $("#YJ_activeContent").attr("data-type");
         if(from=="home-active"||from=="tuiguang-active") {
+			if(YJSay.is_weiXin()){
+				YJSay.transmitWX();
+			}else{
             YJSay.checkSecurityKey("5",activeId);
             YJSay.transmit("?5&&"+activeId+"&&"+encodeURIComponent(YJSay.baseUrl + "/img/YJPersonal/index.html#YJ_activeContent?activeId="+activeId+"&buildId="+buildId+"&from="+from+"&type="+type+"&securityKey="+YJSay.getSecurityKey()));
-        }else if(from=="home-haibao"||from=="tuiguang-haibao"){
+			}
+		}else if(from=="home-haibao"||from=="tuiguang-haibao"){
             YJSay.checkSecurityKey("3",activeId);
             YJSay.transmit(YJSay.baseUrl + "/img/haibao/jsEditor/poster/"+buildId+"/"+activeId+"/1.html?3&&"+activeId+"&&"+encodeURIComponent(YJSay.baseUrl +"/img/YJPersonal/#YJ_louPanDetail?buildId="+buildId+"&securityKey="+YJSay.getSecurityKey()));
         }else if(from=="home-loushu"||from=="tuiguang-loushu"){

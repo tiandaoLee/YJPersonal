@@ -193,6 +193,29 @@ var YJSay = (function ($) {
 				}
 			});
 		},
+		transmitWX:function(){
+			wx.onMenuShareTimeline({
+			  title: '我的分享',
+			  desc: '分享内容啦',
+			  link: 'http://movie.douban.com/subject/25785114/',
+			  imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
+			  trigger: function (res) {
+				alert('触发了');
+			  },
+			  complete: function (res) {
+				alert(JSON.stringify(res));
+			  },
+			  success: function (res) {
+				alert('成功了');
+			  },
+			  cancel: function (res) {
+				alert('取消了');
+			  },
+			  fail: function (res) {
+				alert(JSON.stringify(res));
+			  }
+			});
+		},
         setSecurityKey: function (security) {
             securityKey = security;
         },
