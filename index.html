@@ -1269,6 +1269,7 @@
                 changePage("YJ_baseInfo");
                 break;
             case "myParticipation":
+				alert($("#YJ_activeContent").attr("data-from"));
                 $("#YJ_myParticipation").attr("data-activeId",$("#YJ_activeContent").attr("data-activeId"))
                         .attr("data-from",$("#YJ_activeContent").attr("data-from"));
                 changePage("YJ_myParticipation");
