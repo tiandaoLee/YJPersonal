@@ -87,7 +87,7 @@ $(function(){
             data:{'token': token, 'username':$('#username').val(), 'password':$('#password').val()},
             success: function(data){
 			alert(JSON.stringify(data));
-			location.href="bdSuccess.html";
+			location.href="bdSucess.html";
                 var code = data.code;
                 if(code==='200'){
 					//location.href="bdSuccess.html";
