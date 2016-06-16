@@ -87,7 +87,8 @@ var YJSay = (function ($) {
 			  type : "get",
 			  url : "http://test.qingniao8.com/loveShe_admin/index.php/ajaxWeChart/createSign/?url="+this.baseUrl+"/img/YJPersonal/index.html",
 			  dataType : "jsonp",
-			  success : function(data){ 
+			  success : function(data){
+					alert(JSON.stringify(data));
 				  /*wx.config({
 					appId: data.appId,
 					timestamp: data.timestamp,
