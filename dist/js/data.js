@@ -89,7 +89,7 @@ var YJSay = (function ($) {
 			  appId: weixin.appId,
 			  timestamp: weixin.timestamp,
 			  nonceStr: weixin.nonceStr,
-			  signature: hex_sha1(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html'),
+			  signature: hex_sha1(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html#YJ_HOME'),
 			  jsApiList: [
 				'checkJsApi',
 				'onMenuShareTimeline',
