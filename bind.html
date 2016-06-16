@@ -87,9 +87,10 @@ $(function(){
             data:{'token': token, 'username':$('#username').val(), 'password':$('#password').val()},
             success: function(data){
 			alert(JSON.stringify(data));
+			location.href="bdSuccess.html";
                 var code = data.code;
                 if(code==='200'){
-					location.href="bdSuccess.html";
+					//location.href="bdSuccess.html";
                     // location.href = data.url;
                     //location.href = localStorage.getItem('referrer');
                 }else if(code==='8003'){
