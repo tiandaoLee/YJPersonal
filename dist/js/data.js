@@ -7,7 +7,7 @@ var YJSay = (function ($) {
     var securityKey="";
     var alarmList="";
     var addSaleStatus;
-	var weixin = {appId:"wx2ce5de42f31757ea",nonceStr:"Iup3I2PGsq09cSpz",timestamp:new Date().getTime()/1000};
+	//var weixin = {appId:"wx2ce5de42f31757ea",nonceStr:"Iup3I2PGsq09cSpz",timestamp:new Date().getTime()/1000};
     //var weixin = {appId:"wx93ccd8dccdd06205",nonceStr:"V79ub0LNlSzUqiEs",timestamp:1466063208};
 	return {
         baseUrl:"http://src.yjsvip.com",
@@ -82,9 +82,63 @@ var YJSay = (function ($) {
 			});
 		},
 		initWXSDK:function(){
-			this.getWXTicket();
-			alert(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html');
-			wx.config({
+			//this.getWXTicket();
+			$.ajax({
+			  type : "get",
+			  url : "http://test.qingniao8.com/loveShe_admin/index.php/ajaxWeChart/createSign/?url="+this.baseUrl+'/img/YJPersonal/index.html',
+			  dataType : "jsonp",
+			  success : function(data){ 
+				  wx.config({
+					appId: data.appId,
+					timestamp: data.timestamp,
+					nonceStr: data.nonceStr,
+					signature: data.signature,
+					jsApiList: [
+						  'checkJsApi',
+						  'onMenuShareTimeline',
+						  'onMenuShareAppMessage',
+						  'onMenuShareQQ',
+						  'onMenuShareWeibo',
+						  'onMenuShareQZone',
+						  'hideMenuItems',
+						  'showMenuItems',
+						  'hideAllNonBaseMenuItem',
+						  'showAllNonBaseMenuItem',
+						  'translateVoice',
+						  'startRecord',
+						  'stopRecord',
+						  'onVoiceRecordEnd',
+						  'playVoice',
+						  'onVoicePlayEnd',
+						  'pauseVoice',
+						  'stopVoice',
+						  'uploadVoice',
+						  'downloadVoice',
+						  'chooseImage',
+						  'previewImage',
+						  'uploadImage',
+						  'downloadImage',
+						  'getNetworkType',
+						  'openLocation',
+						  'getLocation',
+						  'hideOptionMenu',
+						  'showOptionMenu',
+						  'closeWindow',
+						  'scanQRCode',
+						  'chooseWXPay',
+						  'openProductSpecificView',
+						  'addCard',
+						  'chooseCard',
+						  'openCard'
+					]
+				  });
+			  },
+			  error:function(data){
+				  alert("连接失败！");
+			  }
+		  });
+			//alert(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html');
+			/*wx.config({
 			  debug: true,
 			  appId: weixin.appId,
 			  timestamp: weixin.timestamp,
@@ -128,7 +182,7 @@ var YJSay = (function ($) {
 				'chooseCard',
 				'openCard'
 			  ]
-		  });
+		  });*/
 		},
 		scanQRCode:function(){
 			alert("点到了");
