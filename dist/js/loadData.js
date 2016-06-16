@@ -33,7 +33,7 @@ function loadData(id){
                     var _buildList = data.buildList;
                     console.log(_buildList);
                     var _html="";
-					//_buildList = [];
+					_buildList = [];
                     $.each(_buildList, function (index,ele) {
                         var sale = {saleUserAccountId:this.saleUserAccountId,tel:this.tel,saleName:this.saleName,saleImage:this.saleImage};
                         var buildName = this.buildName;
