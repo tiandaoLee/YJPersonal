@@ -916,6 +916,9 @@
 		var bottomHeight = $(".navbar-absolute-bottom").height();
 		$("#YJ_ACTIVE_COVER").css({height:height-bottomHeight+"px"});
 	});
+	$("#YJ_hasNoBuild").on("click",function(){
+		YJSay.useNativeFunction("scanQRCode");
+	});
     function is_PC() {
         if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
             return false;
