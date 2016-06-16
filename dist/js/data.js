@@ -7,7 +7,7 @@ var YJSay = (function ($) {
     var securityKey="";
     var alarmList="";
     var addSaleStatus;
-	var weixin = {appId:"wx2ce5de42f31757ea",timestamp:new Date().getTime()/1000};
+	var weixin = {appId:"wx2ce5de42f31757ea",timestamp:parseInt(new Date().getTime()/1000)};
     //var weixin = {appId:"wx93ccd8dccdd06205",nonceStr:"V79ub0LNlSzUqiEs",timestamp:1466063208};
 	return {
         baseUrl:"http://src.yjsvip.com",
