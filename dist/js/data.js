@@ -174,7 +174,7 @@ var YJSay = (function ($) {
 			//alert(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html');
 			weixin.nonceStr = this.randomString();
 			alert(JSON.stringify(weixin));
-			alert(hex_sha1("jsapi_ticket="+localStorage.setItem("wxTicket")+"&noncestr="+weixin.nonceStr+"&timestamp="+weixin.timestamp+"&url="+this.baseUrl+"/img/YJPersonal/index.html"));
+			alert(hex_sha1("jsapi_ticket="+localStorage.getItem("wxTicket")+"&noncestr="+weixin.nonceStr+"&timestamp="+weixin.timestamp+"&url="+this.baseUrl+"/img/YJPersonal/index.html"));
 			wx.config({
 			  debug: true,
 			  appId: "wx2ce5de42f31757ea",
