@@ -83,12 +83,12 @@ var YJSay = (function ($) {
 		},
 		initWXSDK:function(){
 			//this.getWXTicket();
-			/*$.ajax({
+			$.ajax({
 			  type : "get",
 			  url : "http://test.qingniao8.com/loveShe_admin/index.php/ajaxWeChart/createSign/?url="+this.baseUrl+"/img/YJPersonal/index.html",
 			  dataType : "jsonp",
 			  success : function(data){ 
-				  wx.config({
+				  /*wx.config({
 					appId: data.appId,
 					timestamp: data.timestamp,
 					nonceStr: data.nonceStr,
@@ -131,12 +131,12 @@ var YJSay = (function ($) {
 						  'chooseCard',
 						  'openCard'
 					]
-				  });
+				  });*/
 			  },
 			  error:function(data){
 				  alert("连接失败！");
 			  }
-		  });*/
+		  });
 			//alert(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html');
 			/*wx.config({
 			  debug: true,
