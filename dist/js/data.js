@@ -88,12 +88,11 @@ var YJSay = (function ($) {
 			  url : "http://test.qingniao8.com/loveShe_admin/index.php/ajaxWeChart/createSign/?url="+this.baseUrl+"/img/YJPersonal/index.html",
 			  dataType : "jsonp",
 			  success : function(data){
-					alert(JSON.stringify(data));
-				  /*wx.config({
-					appId: data.appId,
-					timestamp: data.timestamp,
-					nonceStr: data.nonceStr,
-					signature: data.signature,
+				  wx.config({
+					appId: data.data.appId,
+					timestamp: data.data.timestamp,
+					nonceStr: data.data.nonceStr,
+					signature: data.data.signature,
 					jsApiList: [
 						  'checkJsApi',
 						  'onMenuShareTimeline',
@@ -132,7 +131,7 @@ var YJSay = (function ($) {
 						  'chooseCard',
 						  'openCard'
 					]
-				  });*/
+				  });
 			  },
 			  error:function(data){
 				  alert("连接失败！");
