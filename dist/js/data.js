@@ -207,6 +207,30 @@ var YJSay = (function ($) {
 				'openCard'
 			  ]
 		  });
+		  wx.ready(function () {
+					 wx.onMenuShareQQ({
+					  title: '我的分享',
+					  desc: '分享分享分享',
+					  link: 'http://movie.douban.com/subject/25785114/',
+					  imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
+					  trigger: function (res) {
+						alert('触发分享了');
+					  },
+					  complete: function (res) {
+						alert(JSON.stringify(res));
+					  },
+					  success: function (res) {
+						alert('分享成功了');
+					  },
+					  cancel: function (res) {
+						alert('分享取消了');
+					  },
+					  fail: function (res) {
+						alert(JSON.stringify(res));
+					  }
+					});
+					alert('分享'); 
+				  });
 		},
 		scanQRCode:function(){
 			wx.scanQRCode({
