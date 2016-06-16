@@ -7,8 +7,9 @@ var YJSay = (function ($) {
     var securityKey="";
     var alarmList="";
     var addSaleStatus;
-	var weixin = {appId:"wx93ccd8dccdd06205",nonceStr:"Iup3I2PGsq09cSpz",timestamp:1465653179};
-    return {
+	//var weixin = {appId:"wx93ccd8dccdd06205",nonceStr:"Iup3I2PGsq09cSpz",timestamp:1465653179};
+    var weixin = {appId:"wx93ccd8dccdd06205",nonceStr:"V79ub0LNlSzUqiEs",timestamp:1466063208};
+	return {
         baseUrl:"http://src.yjsvip.com",
         getData: function (option) {
             var async = option.async;
@@ -88,7 +89,7 @@ var YJSay = (function ($) {
 			  appId: weixin.appId,
 			  timestamp: weixin.timestamp,
 			  nonceStr: weixin.nonceStr,
-			  signature: hex_sha1(localStorage.getItem("wxTicket")+'&noncestr='+weixin.nonceStr+'&timestamp='+weixin.timestamp+'&url='+this.baseUrl+'/img/YJPersonal/index.html#YJ_HOME'),
+			  signature: 'fa6f190acde5ca3a980d8e42edabcc82f195a999',
 			  jsApiList: [
 				'checkJsApi',
 				'onMenuShareTimeline',
