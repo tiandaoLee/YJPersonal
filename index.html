@@ -978,6 +978,11 @@
 					data:{token:_token,sourceId:_id,securityKey:YJSay.getSecurityKey()},
 					success: function (data) {
 						alert("本地数据："+JSON.stringify(data));
+						if(data.code==8003&&YJSay.is_weiXin()){
+							localStorage.setItem("locationHref",location.hash);
+							location.href="login.html";
+							return;
+						}
 						YJSay.setSecurityKey(data.pointInfo.securityKey);
 						YJSay.getData({
 							url:"/yjsWebService/point/checkActivePlayInfo",
@@ -1001,6 +1006,11 @@
 					data:{token:YJSay.getToken(),activeType:3,id:_id},
 					success: function (data) {
 						alert(JSON.stringify(data));
+						if(data.code==8003&&YJSay.is_weiXin()){
+							localStorage.setItem("locationHref",location.hash);
+							location.href="login.html";
+							return;
+						}
 						hasGuanzhu = data.playInfo.guanzhuPlay;
 						var gz = $("#YJ_activeContent").find(".gz");
 						hasGuanzhu?gz.addClass("hidden"):gz.removeClass("hidden");
@@ -1013,6 +1023,11 @@
 					url:"/yjsWebService/point/getLoushuViewPoint",
 					data:{token:YJSay.getToken(),sourceId:_id,securityKey:YJSay.getSecurityKey()},
 					success: function (data) {
+						if(data.code==8003&&YJSay.is_weiXin()){
+							localStorage.setItem("locationHref",location.hash);
+							location.href="login.html";
+							return;
+						}
 						YJSay.setSecurityKey(data.pointInfo.securityKey);
 						YJSay.getData({
 							url:"/yjsWebService/point/checkActivePlayInfo",
